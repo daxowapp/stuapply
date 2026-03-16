@@ -1,0 +1,152 @@
+{
+  "Navigation": {
+    "home": "Ana Sayfa",
+    "programs": "Programlar",
+    "universities": "Üniversiteler",
+    "services": "Hizmetler",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "applyNow": "Hemen Başvur",
+    "search": "Ara"
+  },
+  "Homepage": {
+    "Hero": {
+      "title": "Ayrıcalıklı Eğitime Adım Atın",
+      "subtitle": "Saatler içinde hızlı üniversite kabulü. Uluslararası öğrenciler için ücretsiz kapsamlı destek.",
+      "searchPlaceholder": "Bölüm, üniversite arayın...",
+      "searchButton": "Program Ara"
+    },
+    "Stats": {
+      "students": "50.000+",
+      "studentsLabel": "Öğrenciye Destek",
+      "universities": "390+",
+      "universitiesLabel": "Üniversite",
+      "programs": "17.000+",
+      "programsLabel": "Program Seçeneği"
+    },
+    "Services": {
+      "title": "Hizmetlerimiz",
+      "subtitle": "Türkiye'de eğitim almanız için ihtiyacınız olan her şey tamamen ücretsiz.",
+      "counseling": "Eğitim Danışmanlığı",
+      "counselingDesc": "Akademik ve kariyer hedeflerinize özel uzman tavsiyesi.",
+      "application": "Başvuru Süreci",
+      "applicationDesc": "Evrak işlerini biz halleder, hızlı kabul oranları sağlarız.",
+      "arrival": "Karşılama Desteği",
+      "arrivalDesc": "Havaalanı karşılaması ve yerleşme yardımı.",
+      "studentCare": "Öğrenci Destek",
+      "studentCareDesc": "Tüm eğitim yolculuğunuz boyunca sürekli destek.",
+      "fastProcessing": "Hızlı İşlem",
+      "fastProcessingDesc": "Üniversite kabul mektubunuzu saatler içinde alın.",
+      "freeService": "%100 Ücretsiz Hizmet",
+      "freeServiceDesc": "Kapsamlı desteğimiz öğrenciler için tamamen ücretsizdir.",
+      "learnMore": "Daha fazla bilgi"
+    },
+    "WhyUs": {
+      "title": "Neden Bizi Seçmelisiniz?",
+      "subtitle": "Türk eğitim sisteminde gezinirken güvenilir ortağınızız.",
+      "smartestWay": "En akıllı yol",
+      "smartestWaySub": "Türkiye'de eğitim almanın",
+      "community": "Büyüyen topluluklara katılın",
+      "confidenceTitle": "Güvenle Eğitim Alın",
+      "confidenceDesc": "Ücretsiz, garantili yerleştirme hizmetimiz aracılığıyla mükemmel üniversitesini bulan binlerce başarılı öğrenciye katılın.",
+      "acceptanceRate": "Kabul Oranı",
+      "officialPartners": "Resmi Ortaklar",
+      "point1Title": "Garantili Yerleştirme",
+      "point1": "Resmi üniversite ortaklıkları yerleşiminizi garanti eder.",
+      "point2Title": "Yılların Mükemmelliği",
+      "point2": "Uluslararası öğrenci yerleştirmede 15+ yıllık deneyim.",
+      "point3Title": "Çok Dilli Destek",
+      "point3": "Birden fazla dil konuşan uzman danışman ekibi.",
+      "cta": "Yolculuğunuza Bugün Başlayın"
+    },
+    "CTA": {
+      "title": "Yolculuğunuza başlamaya hazır mısınız?",
+      "desc": "Türkiye'de eğitim gören binlerce uluslararası öğrenciye katılın. Sürecimiz %100 ücretsizdir ve özenle yönlendirilir."
+    }
+  },
+  "Hero": {
+    "title": "Türkiye'de Eğitim Alın",
+    "subtitle": "Dünya Standartlarında Yükseköğrenime Açılan Kapınız",
+    "searchPlaceholder": "Üniversiteleri, programları arayın..."
+  },
+  "Search": {
+    "title": "Programını Bul",
+    "placeholder": "Program veya üniversite ara...",
+    "resultsFound": "bulundu",
+    "noResults": "Aramanızla eşleşen program bulunamadı.",
+    "applyNow": "Hemen Başvur",
+    "filters": "Filtreler"
+  },
+  "Program": {
+    "officialPrice": "Resmi Ücret",
+    "discountedPrice": "İndirimli Ücret",
+    "studyYears": "Süre (Yıl)",
+    "applyBtn": "Bu Programa Başvur"
+  },
+  "Application": {
+    "title": "Öğrenci Başvuru Formu",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "email": "E-posta Adresi",
+    "phone": "Telefon Numarası",
+    "submit": "Başvuruyu Gönder",
+    "success": "Başvurunuz başarıyla alınmıştır!",
+    "error": "Başvurunuz gönderilirken bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "About": {
+    "title": "Hakkımızda",
+    "subtitle": "Türkiye'de Eğitim İçin Güvenilir Rehberiniz",
+    "mission": "Misyonumuz, şeffaf, verimli ve ücretsiz yerleştirme hizmetleri sunarak hırslı uluslararası öğrencilerle dünya standartlarındaki Türk üniversiteleri arasındaki boşluğu doldurmaktır.",
+    "vision": "Her öğrencinin idari engeller veya gizli maliyetler olmadan küresel eğitime erişebildiği bir dünya hayal ediyoruz.",
+    "whyTrustUs": "Neden Bize Güvenmelisiniz?"
+  },
+  "Contact": {
+    "title": "İletişim",
+    "subtitle": "Sizden haber almayı çok isteriz. Ekibimizle iletişime geçin.",
+    "name": "Adınız",
+    "email": "E-posta Adresiniz",
+    "message": "Mesajınız",
+    "send": "Mesaj Gönder",
+    "success": "Mesajınız başarıyla gönderildi. En kısa sürede size geri döneceğiz.",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+    "office": "Ofisimiz",
+    "location": "İstanbul, Türkiye"
+  },
+  "Services": {
+    "title": "Hizmetlerimiz",
+    "subtitle": "Başvurudan mezuniyete kadar kapsamlı destek.",
+    "admission": "Üniversite Kabulü",
+    "admissionDesc": "Garantili kabul ile en iyi özel Türk üniversitelerine %100 ücretsiz yerleştirme.",
+    "visa": "Vize Danışmanlığı",
+    "visaDesc": "Türkiye öğrenci vizesi sürecinde adım adım rehberlik.",
+    "housing": "Konaklama",
+    "housingDesc": "Kampüsünüze yakın, güvenli ve uygun fiyatlı öğrenci yurtları veya daireleri bulma konusunda yardım.",
+    "airport": "Havaalanı Transferi",
+    "airportDesc": "Havaalanında VIP karşılama ve konaklama yerinize güvenli transfer."
+  },
+  "Turkey": {
+    "title": "Türkiye'de Eğitim",
+    "subtitle": "Dünya standartlarında eğitim ve zengin kültürel deneyimler sunan, Avrupa ile Asya arasında bir köprü.",
+    "whyTurkey": "Neden Türkiye'de Eğitim?",
+    "quality": "Yüksek Kaliteli Eğitim",
+    "qualityDesc": "Türk üniversiteleri dünya çapında tanınmaktadır ve Bologna sürecine katılmaktadır.",
+    "affordable": "Uygun Maliyetli Yaşam",
+    "affordableDesc": "Batı ülkelerinin çok altında bir maliyetle yüksek yaşam standartlarını deneyimleyin.",
+    "strategicLocation": "Stratejik Konum",
+    "strategicLocationDesc": "Zengin kültürel tarihiyle Doğu ile Batı'yı birbirine bağlıyor.",
+    "vibrantCulture": "Canlı Kültür",
+    "vibrantCultureDesc": "Harika yemekler, misafirperver insanlar ve keşfedilecek sayısız yer.",
+    "cities": "Popüler Öğrenci Şehirleri",
+    "citiesDesc": "Türkiye'deki uluslararası öğrenciler için en iyi şehirleri keşfedin. Her şehir akademik mükemmellik, zengin tarih ve canlı öğrenci yaşamının benzersiz bir karışımını sunar.",
+    "istanbul": "İstanbul",
+    "istanbulDesc": "50'den fazla üniversiteye ve gelişen bir uluslararası öğrenci topluluğuna ev sahipliği yapan Türkiye'nin kültürel ve ekonomik kalbi. Avrupa ile Asya'yı birbirine bağlayan zengin tarihiyle öğrenciler, canlı bir ortamda çeşitli akademik ortamların ve sayısız kariyer fırsatının tadını çıkarıyor.",
+    "ankara": "Ankara",
+    "ankaraDesc": "Siyasi ve akademik başkent olarak Ankara, uygun yaşam koşullarına sahip güçlü bir akademik ortam sunar. Araştırma mükemmelliğiyle tanınan en üst düzey üniversitelere ev sahipliği yapması, onu uluslararası öğrenciler için oldukça aranan bir yer haline getiriyor.",
+    "izmir": "İzmir",
+    "izmirDesc": "Güzel Ege kıyısında yer alan İzmir, akademik titizlik ile rahat bir yaşam tarzı arasında mükemmel bir denge sunar. Misafirperver atmosferi, hoş iklimi ve canlı kültürel sahnesiyle bilinen, hem yerel hem de uluslararası öğrenciler arasında favoridir.",
+    "eskisehir": "Eskişehir",
+    "eskisehirDesc": "Genellikle Türkiye'nin 'Öğrenci Şehri' olarak anılan Eskişehir, yüksek öğrenci memnuniyet oranına sahiptir. Çok misafirperver ve öğrenci odaklı bir ortamda uygun fiyatlar, rahat ulaşım ve zengin sosyal aktiviteler sunar.",
+    "antalya": "Antalya",
+    "antalyaDesc": "Çarpıcı plajları ve turizmiyle ünlü Antalya, aynı zamanda büyüyen bir öğrenci nüfusuna da ev sahipliği yapmaktadır. Güzel bir Akdeniz ortamında düşük yaşam maliyetleri, canlı bir kültürel sahne ve mükemmel eğitim kurumları sunar."
+  }
+}

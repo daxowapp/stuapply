@@ -1,0 +1,833 @@
+[dotenv@17.3.1] injecting env (2) from .env.local -- tip: 🛡️ auth for agents: https://vestauth.com
+Fetching universities from Supabase...
+Found 395 universities to process.
+Fetching info for: new test
+-> Prepared SQL for new test
+Fetching info for: SWPS
+-> Prepared SQL for SWPS
+Fetching info for: ILSC Toronto
+-> No good data found for ILSC Toronto
+Fetching info for: Istanbul Okan University
+-> Prepared SQL for Istanbul Okan University
+Fetching info for: Istanbul Gelisim University
+-> Prepared SQL for Istanbul Gelisim University
+Fetching info for: Istanbul Aydin University
+-> Prepared SQL for Istanbul Aydin University
+Fetching info for: Istanbul Bilgi University
+-> Prepared SQL for Istanbul Bilgi University
+Fetching info for: American University
+-> Prepared SQL for American University
+Fetching info for: Istanbul Topkapi University
+-> Prepared SQL for Istanbul Topkapi University
+Fetching info for: University of Kansas
+-> Prepared SQL for University of Kansas
+Processed 10/395
+Fetching info for: Auburn University at Montgomery
+-> Prepared SQL for Auburn University at Montgomery
+Fetching info for: Adelphi University
+-> Prepared SQL for Adelphi University
+Fetching info for: Cleveland State University
+-> Prepared SQL for Cleveland State University
+Fetching info for: Gonzaga University
+-> Prepared SQL for Gonzaga University
+Fetching info for: University of Dayton
+-> Prepared SQL for University of Dayton
+Fetching info for: University of Illinois Chicago
+-> Prepared SQL for University of Illinois Chicago
+Fetching info for: University of Mississippi
+-> Prepared SQL for University of Mississippi
+Fetching info for: University of Utah
+-> Prepared SQL for University of Utah
+Fetching info for: University of Wollongong
+-> Prepared SQL for University of Wollongong
+Fetching info for: George Mason University - Fairfax
+-> Prepared SQL for George Mason University - Fairfax
+Processed 20/395
+Fetching info for: Washington State University - Pullman
+-> Prepared SQL for Washington State University - Pullman
+Fetching info for: Auburn University
+-> Prepared SQL for Auburn University
+Fetching info for: Louisiana State University
+-> Prepared SQL for Louisiana State University
+Fetching info for: University of Ottawa
+-> Prepared SQL for University of Ottawa
+Fetching info for: University of Manitoba
+-> Prepared SQL for University of Manitoba
+Fetching info for: Lowa State University
+-> Prepared SQL for Lowa State University
+Fetching info for: Middlesex University
+-> Prepared SQL for Middlesex University
+Fetching info for: Florida Atlantic University
+-> Prepared SQL for Florida Atlantic University
+Fetching info for: Akev University
+-> Prepared SQL for Akev University
+Fetching info for: University of Hertfordshire
+-> Prepared SQL for University of Hertfordshire
+Processed 30/395
+Fetching info for: San Francisco State University
+-> Prepared SQL for San Francisco State University
+Fetching info for: University of Westminster - Cavendish
+-> Prepared SQL for University of Westminster - Cavendish
+Fetching info for: University of Greenwich
+-> Prepared SQL for University of Greenwich
+Fetching info for: Lakehead University
+-> Prepared SQL for Lakehead University
+Fetching info for: University of Mississippi (new)
+-> Prepared SQL for University of Mississippi (new)
+Fetching info for: James Madison University
+-> Prepared SQL for James Madison University
+Fetching info for: Binary University of Management & Entrepreneurship
+-> Prepared SQL for Binary University of Management & Entrepreneurship
+Fetching info for: Trent University - Durham GTA
+-> No good data found for Trent University - Durham GTA
+Fetching info for: Pace University - New York City
+-> Prepared SQL for Pace University - New York City
+Fetching info for: Adelphi University NY
+-> Prepared SQL for Adelphi University NY
+Processed 40/395
+Fetching info for: California State University Chico
+-> Prepared SQL for California State University Chico
+Fetching info for: Suffolk University
+-> Prepared SQL for Suffolk University
+Fetching info for: Illinois State University
+-> Prepared SQL for Illinois State University
+Fetching info for: Southern Utah University
+-> Prepared SQL for Southern Utah University
+Fetching info for: University of Colorado - Denver
+-> Prepared SQL for University of Colorado - Denver
+Fetching info for: University of Illinois - Springfield
+-> Prepared SQL for University of Illinois - Springfield
+Fetching info for: Southern New Hampshire University
+-> Prepared SQL for Southern New Hampshire University
+Fetching info for: University of the Incarnate Word
+-> Prepared SQL for University of the Incarnate Word
+Fetching info for: Dogus University
+-> Prepared SQL for Dogus University
+Fetching info for: Altinbas University
+-> Prepared SQL for Altinbas University
+Processed 50/395
+Fetching info for: Istinye University
+-> Prepared SQL for Istinye University
+Fetching info for: Abdullah Gul University
+-> Prepared SQL for Abdullah Gul University
+Fetching info for: Halic University
+-> Prepared SQL for Halic University
+Fetching info for: Istanbul Arel University
+-> Prepared SQL for Istanbul Arel University
+Fetching info for: City University Malaysia
+-> Prepared SQL for City University Malaysia
+Fetching info for: Istanbul Gedik University
+-> Prepared SQL for Istanbul Gedik University
+Fetching info for: Istanbul Kent University
+-> Prepared SQL for Istanbul Kent University
+Fetching info for: Piri Reis University
+-> Prepared SQL for Piri Reis University
+Fetching info for: Bahcesehir Cyprus University
+-> Prepared SQL for Bahcesehir Cyprus University
+Fetching info for: Cyprus International University
+-> Prepared SQL for Cyprus International University
+Processed 60/395
+Fetching info for: UCSI University Malaysia
+-> Prepared SQL for UCSI University Malaysia
+Fetching info for: University of Surrey
+-> Prepared SQL for University of Surrey
+Fetching info for: Vizja University (UEHS)
+-> No good data found for Vizja University (UEHS)
+Fetching info for: Poznan University of Technology (new)
+-> Prepared SQL for Poznan University of Technology (new)
+Fetching info for: Silesian University of Technology
+-> Prepared SQL for Silesian University of Technology
+Fetching info for: Ryerson University
+-> Prepared SQL for Ryerson University
+Fetching info for: Maritime University of Szczecin
+-> Prepared SQL for Maritime University of Szczecin
+Fetching info for: Warsaw University of Technology (new)
+-> Prepared SQL for Warsaw University of Technology (new)
+Fetching info for: Nottingham Trent University - Clifton Campus
+-> Prepared SQL for Nottingham Trent University - Clifton Campus
+Fetching info for: University of Leeds
+-> Prepared SQL for University of Leeds
+Processed 70/395
+Fetching info for: Cardiff University
+-> Prepared SQL for Cardiff University
+Fetching info for: Istanbul Medipol University
+-> Prepared SQL for Istanbul Medipol University
+Fetching info for: Istanbul Ticaret University
+-> Prepared SQL for Istanbul Ticaret University
+Fetching info for: Karatay University
+-> Prepared SQL for Karatay University
+Fetching info for: Kyrenia University
+-> Prepared SQL for Kyrenia University
+Fetching info for: SEGi University Malaysia
+-> Prepared SQL for SEGi University Malaysia
+Fetching info for: Swansea University - Bay Campus
+-> Prepared SQL for Swansea University - Bay Campus
+Fetching info for: Bournemouth University - Talbot Campus
+-> Prepared SQL for Bournemouth University - Talbot Campus
+Fetching info for: University of Sunderland
+-> Prepared SQL for University of Sunderland
+Fetching info for: Near East University
+-> Prepared SQL for Near East University
+Processed 80/395
+Fetching info for: Bahcesehir Istanbul University
+-> Prepared SQL for Bahcesehir Istanbul University
+Fetching info for: University Of Warsaw
+-> Prepared SQL for University Of Warsaw
+Fetching info for: Isik University
+-> Prepared SQL for Isik University
+Fetching info for: Queen's University Belfast
+-> Prepared SQL for Queen's University Belfast
+Fetching info for: University of Nottingham
+-> Prepared SQL for University of Nottingham
+Fetching info for: Utica University
+-> Prepared SQL for Utica University
+Fetching info for: Brock University
+-> Prepared SQL for Brock University
+Fetching info for: Bilkent University
+-> Prepared SQL for Bilkent University
+Fetching info for: Ozyegin University
+-> Prepared SQL for Ozyegin University
+Fetching info for: Istanbul Kultur University
+-> Prepared SQL for Istanbul Kultur University
+Processed 90/395
+Fetching info for: Yeditepe University
+-> Prepared SQL for Yeditepe University
+Fetching info for: Beykent University
+-> Prepared SQL for Beykent University
+Fetching info for: Atilim University
+-> Prepared SQL for Atilim University
+Fetching info for: University of Kyrenia
+-> Prepared SQL for University of Kyrenia
+Fetching info for: Kadir Has University
+-> Prepared SQL for Kadir Has University
+Fetching info for: Istanbul Nisantasi University
+-> Prepared SQL for Istanbul Nisantasi University
+Fetching info for: Baskent University
+-> Prepared SQL for Baskent University
+Fetching info for: Istanbul Sehir University
+-> Prepared SQL for Istanbul Sehir University
+Fetching info for: Istanbul Yeni Yuzyil University
+-> Prepared SQL for Istanbul Yeni Yuzyil University
+Fetching info for: TED University
+-> Prepared SQL for TED University
+Processed 100/395
+Fetching info for: Istanbul Sabahattin Zaim University
+-> Prepared SQL for Istanbul Sabahattin Zaim University
+Fetching info for: Roger Williams University (new)
+-> Prepared SQL for Roger Williams University (new)
+Fetching info for: Warsaw University of Technology
+-> Prepared SQL for Warsaw University of Technology
+Fetching info for: Beykoz University
+-> Prepared SQL for Beykoz University
+Fetching info for: University of Ecology and Management in Warsaw
+-> Prepared SQL for University of Ecology and Management in Warsaw
+Fetching info for: WSPA
+-> Prepared SQL for WSPA
+Fetching info for: Sisli Vocational School
+-> Prepared SQL for Sisli Vocational School
+Fetching info for: Maltepe University
+-> Prepared SQL for Maltepe University
+Fetching info for: Eastern Mediterranean University
+-> Prepared SQL for Eastern Mediterranean University
+Fetching info for: Izmir University of Economics
+-> Prepared SQL for Izmir University of Economics
+Processed 110/395
+Fetching info for: Berlin International University
+-> Prepared SQL for Berlin International University
+Fetching info for: MEF University
+-> Prepared SQL for MEF University
+Fetching info for: International Balkan University
+-> Prepared SQL for International Balkan University
+Fetching info for: Istanbul Esenyurt University
+-> Prepared SQL for Istanbul Esenyurt University
+Fetching info for: Universitiy Technology Malaysia (UTM)
+-> No good data found for Universitiy Technology Malaysia (UTM)
+Fetching info for: University of Central Florida
+-> Prepared SQL for University of Central Florida
+Fetching info for: Fenerbahce University
+-> Prepared SQL for Fenerbahce University
+Fetching info for: University of Tennessee Knoxville
+-> Prepared SQL for University of Tennessee Knoxville
+Fetching info for: Fatih Sultan Mehmet University
+-> Prepared SQL for Fatih Sultan Mehmet University
+Fetching info for: BUWE(Bristol University of the West of England)
+-> No good data found for BUWE(Bristol University of the West of England)
+Processed 120/395
+Fetching info for: Coventry University
+-> Prepared SQL for Coventry University
+Fetching info for: Anglia Ruskin University
+-> Prepared SQL for Anglia Ruskin University
+Fetching info for: London Metropolitan University - Aldgate
+-> Prepared SQL for London Metropolitan University - Aldgate
+Fetching info for: Florida A&M University
+-> Prepared SQL for Florida A&M University
+Fetching info for: Louisiana Tech University
+-> Prepared SQL for Louisiana Tech University
+Fetching info for: London South Bank University - Southwark Campus
+-> Prepared SQL for London South Bank University - Southwark Campus
+Fetching info for: University of North Alabama
+-> Prepared SQL for University of North Alabama
+Fetching info for: Final International University
+-> Prepared SQL for Final International University
+Fetching info for: International University of Sarajevo
+-> Prepared SQL for International University of Sarajevo
+Fetching info for: Ankara Medipol University
+-> Prepared SQL for Ankara Medipol University
+Processed 130/395
+Fetching info for: OSTiM Technical University
+-> Prepared SQL for OSTiM Technical University
+Fetching info for: Asia Pacific University Malaysia
+-> Prepared SQL for Asia Pacific University Malaysia
+Fetching info for: Loughborough University
+-> Prepared SQL for Loughborough University
+Fetching info for: Brunel University London
+-> Prepared SQL for Brunel University London
+Fetching info for: Carleton University
+-> Prepared SQL for Carleton University
+Fetching info for: Biruni University
+-> Prepared SQL for Biruni University
+Fetching info for: Istanbul Galata University
+-> Prepared SQL for Istanbul Galata University
+Fetching info for: Ankara Bilim University
+-> Prepared SQL for Ankara Bilim University
+Fetching info for: Rocky Mountain College of Art + Design
+-> Prepared SQL for Rocky Mountain College of Art + Design
+Fetching info for: Istanbul Atlas University
+-> Prepared SQL for Istanbul Atlas University
+Processed 140/395
+Fetching info for: Poznan University of Arts
+-> Prepared SQL for Poznan University of Arts
+Fetching info for: University of South Wales - Cardiff
+-> Prepared SQL for University of South Wales - Cardiff
+Fetching info for: University of New Haven
+-> Prepared SQL for University of New Haven
+Fetching info for: Mount Royal University
+-> Prepared SQL for Mount Royal University
+Fetching info for: Austin College
+-> Prepared SQL for Austin College
+Fetching info for: Southwestern University
+-> Prepared SQL for Southwestern University
+Fetching info for: University of Massachusetts Boston
+-> Prepared SQL for University of Massachusetts Boston
+Fetching info for: University of South Carolina
+-> Prepared SQL for University of South Carolina
+Fetching info for: University of Arizona
+-> Prepared SQL for University of Arizona
+Fetching info for: Western University
+-> Prepared SQL for Western University
+Processed 150/395
+Fetching info for: University of Delaware
+-> Prepared SQL for University of Delaware
+Fetching info for: University of Dundee
+-> Prepared SQL for University of Dundee
+Fetching info for: Saint Louis University
+-> Prepared SQL for Saint Louis University
+Fetching info for: University of Bristol
+-> Prepared SQL for University of Bristol
+Fetching info for: University of Sussex
+-> Prepared SQL for University of Sussex
+Fetching info for: The University of Tulsa
+-> Prepared SQL for The University of Tulsa
+Fetching info for: Seattle University
+-> Prepared SQL for Seattle University
+Fetching info for: Eastern Washington University
+-> Prepared SQL for Eastern Washington University
+Fetching info for: Drew University
+-> Prepared SQL for Drew University
+Fetching info for: California State University Channel Islands
+-> Prepared SQL for California State University Channel Islands
+Processed 160/395
+Fetching info for: Whittier College
+-> Prepared SQL for Whittier College
+Fetching info for: Uskudar University
+-> Prepared SQL for Uskudar University
+Fetching info for: Sabanci University
+-> Prepared SQL for Sabanci University
+Fetching info for: Winthrop University
+-> Prepared SQL for Winthrop University
+Fetching info for: New Horizons Institution Sydney
+-> Prepared SQL for New Horizons Institution Sydney
+Fetching info for: Budapest Metropolitan University
+-> Prepared SQL for Budapest Metropolitan University
+Fetching info for: Gumushane University
+-> Prepared SQL for Gumushane University
+Fetching info for: Ibn Haldun University
+-> Prepared SQL for Ibn Haldun University
+Fetching info for: St. Norbert College
+-> Prepared SQL for St. Norbert College
+Fetching info for: Multimedia University Malaysia
+-> Prepared SQL for Multimedia University Malaysia
+Processed 170/395
+Fetching info for: Eureka College
+-> Prepared SQL for Eureka College
+Fetching info for: Florida International University
+-> Prepared SQL for Florida International University
+Fetching info for: St. Thomas Aquinas College
+-> Prepared SQL for St. Thomas Aquinas College
+Fetching info for: University of the Pacific
+-> Prepared SQL for University of the Pacific
+Fetching info for: Simmons University
+-> Prepared SQL for Simmons University
+Fetching info for: Arizona State University - Downtown Phoenix
+-> Prepared SQL for Arizona State University - Downtown Phoenix
+Fetching info for: Arizona State University - Polytechnic
+-> Prepared SQL for Arizona State University - Polytechnic
+Fetching info for: Adam Mickiewicz University
+-> Prepared SQL for Adam Mickiewicz University
+Fetching info for: Wroclaw University
+-> Prepared SQL for Wroclaw University
+Fetching info for: Lodz University
+-> Prepared SQL for Lodz University
+Processed 180/395
+Fetching info for: Illinois Institute of Technology
+-> Prepared SQL for Illinois Institute of Technology
+Fetching info for: University of Essex - Colchester Campus
+-> Prepared SQL for University of Essex - Colchester Campus
+Fetching info for: Glasgow Caledonian University
+-> Prepared SQL for Glasgow Caledonian University
+Fetching info for: California State University Monterey Bay
+-> Prepared SQL for California State University Monterey Bay
+Fetching info for: Murray State University
+-> Prepared SQL for Murray State University
+Fetching info for: Western New England University
+-> Prepared SQL for Western New England University
+Fetching info for: Ohio Northern University
+-> Prepared SQL for Ohio Northern University
+Fetching info for: Mercy College - Dobbs Ferry
+-> Prepared SQL for Mercy College - Dobbs Ferry
+Fetching info for: California Lutheran University
+-> Prepared SQL for California Lutheran University
+Fetching info for: Ohio Wesleyan University
+-> Prepared SQL for Ohio Wesleyan University
+Processed 190/395
+Fetching info for: Trinity Western University - Langley
+-> Prepared SQL for Trinity Western University - Langley
+Fetching info for: Mercy College - Manhattan
+-> Prepared SQL for Mercy College - Manhattan
+Fetching info for: Humber College - Lakeshore
+-> Prepared SQL for Humber College - Lakeshore
+Fetching info for: Northwest Missouri State University
+-> Prepared SQL for Northwest Missouri State University
+Fetching info for: North Park University - Chicago
+-> Prepared SQL for North Park University - Chicago
+Fetching info for: Concordia University Chicago
+-> Prepared SQL for Concordia University Chicago
+Fetching info for: Saint Martin's University
+-> Prepared SQL for Saint Martin's University
+Fetching info for: The University of Tampa
+-> Prepared SQL for The University of Tampa
+Fetching info for: Florida Polytechnic University
+-> Prepared SQL for Florida Polytechnic University
+Fetching info for: University of Findlay
+-> Prepared SQL for University of Findlay
+Processed 200/395
+Fetching info for: London Metropolitan University - Holloway
+-> Prepared SQL for London Metropolitan University - Holloway
+Fetching info for: LIM College
+-> Prepared SQL for LIM College
+Fetching info for: Lipscomb University
+-> Prepared SQL for Lipscomb University
+Fetching info for: Longwood University
+-> Prepared SQL for Longwood University
+Fetching info for: University of Wroclaw
+-> Prepared SQL for University of Wroclaw
+Fetching info for: Jagiellonian University
+-> Prepared SQL for Jagiellonian University
+Fetching info for: College of the Canyons
+-> Prepared SQL for College of the Canyons
+Fetching info for: Portland Community College
+-> Prepared SQL for Portland Community College
+Fetching info for: University of Cyberjaya
+-> Prepared SQL for University of Cyberjaya
+Fetching info for: University of Waterloo
+-> Prepared SQL for University of Waterloo
+Processed 210/395
+Fetching info for: Queen's University
+-> Prepared SQL for Queen's University
+Fetching info for: Queen Mary University of London
+-> Prepared SQL for Queen Mary University of London
+Fetching info for: Thompson Rivers University
+-> Prepared SQL for Thompson Rivers University
+Fetching info for: Stetson University
+-> Prepared SQL for Stetson University
+Fetching info for: Mount Allison University
+-> Prepared SQL for Mount Allison University
+Fetching info for: Acibadem University
+-> Prepared SQL for Acibadem University
+Fetching info for: University of Stirling
+-> Prepared SQL for University of Stirling
+Fetching info for: Jagiellonian University (new)
+-> Prepared SQL for Jagiellonian University (new)
+Fetching info for: Royal Holloway University of London - Egham
+-> Prepared SQL for Royal Holloway University of London - Egham
+Fetching info for: Abertay University
+-> Prepared SQL for Abertay University
+Processed 220/395
+Fetching info for: Bishop's University
+-> Prepared SQL for Bishop's University
+Fetching info for: SWPS University
+-> Prepared SQL for SWPS University
+Fetching info for: Roosevelt University
+-> Prepared SQL for Roosevelt University
+Fetching info for: New York Film Academy - Los Angeles
+-> Prepared SQL for New York Film Academy - Los Angeles
+Fetching info for: Ohio Dominican University
+-> Prepared SQL for Ohio Dominican University
+Fetching info for: Vistula University
+-> Prepared SQL for Vistula University
+Fetching info for: Collegium Civitas
+-> Prepared SQL for Collegium Civitas
+Fetching info for: Warsaw Film School
+-> Prepared SQL for Warsaw Film School
+Fetching info for: Polish-Japanese Academy of Information Technology
+-> Prepared SQL for Polish-Japanese Academy of Information Technology
+Fetching info for: Gdansk University of Technology
+-> Prepared SQL for Gdansk University of Technology
+Processed 230/395
+Fetching info for: University of Life Sciences in Lublin
+-> Prepared SQL for University of Life Sciences in Lublin
+Fetching info for: University of information technology and management
+-> Prepared SQL for University of information technology and management
+Fetching info for: Health and Social Sciences University of Cyprus
+-> Prepared SQL for Health and Social Sciences University of Cyprus
+Fetching info for: Lublin University of Technology
+-> Prepared SQL for Lublin University of Technology
+Fetching info for: Schiller International University
+-> Prepared SQL for Schiller International University
+Fetching info for: BAU International University D.C
+-> Prepared SQL for BAU International University D.C
+Fetching info for: Kozminski University
+-> Prepared SQL for Kozminski University
+Fetching info for: International Business School
+-> Prepared SQL for International Business School
+Fetching info for: Lazarski University
+-> Prepared SQL for Lazarski University
+Fetching info for: University of Lodz
+-> Prepared SQL for University of Lodz
+Processed 240/395
+Fetching info for: SGH Warsaw School of Economics
+-> Prepared SQL for SGH Warsaw School of Economics
+Fetching info for: MAHSA University Malaysia
+-> Prepared SQL for MAHSA University Malaysia
+Fetching info for: Kozminski University (new)
+-> Prepared SQL for Kozminski University (new)
+Fetching info for: Warsaw University
+-> Prepared SQL for Warsaw University
+Fetching info for: Warsaw University of Life Sciences (SGGW)
+-> Prepared SQL for Warsaw University of Life Sciences (SGGW)
+Fetching info for: Wroclaw University of Economics
+-> Prepared SQL for Wroclaw University of Economics
+Fetching info for: SAN University of Social Sciences
+-> Prepared SQL for SAN University of Social Sciences
+Fetching info for: Vincent Pol University
+-> Prepared SQL for Vincent Pol University
+Fetching info for: Vincent Pol University (new)
+-> Prepared SQL for Vincent Pol University (new)
+Fetching info for: Pecs University
+-> Prepared SQL for Pecs University
+Processed 250/395
+Fetching info for: Wroclaw University of Science and Technology
+-> Prepared SQL for Wroclaw University of Science and Technology
+Fetching info for: Collegium Da Vinci Pozna?
+-> No good data found for Collegium Da Vinci Pozna?
+Fetching info for: WSB Gdansk
+-> Prepared SQL for WSB Gdansk
+Fetching info for: American Collegiate D.C
+-> Prepared SQL for American Collegiate D.C
+Fetching info for: Lokman Hekim University
+-> Prepared SQL for Lokman Hekim University
+Fetching info for: Yuksek Ihtisas University
+-> Prepared SQL for Yuksek Ihtisas University
+Fetching info for: AGH University of Science and Technology (NEW)
+-> Prepared SQL for AGH University of Science and Technology (NEW)
+Fetching info for: Johns Hopkins University
+-> Prepared SQL for Johns Hopkins University
+Fetching info for: University of logistics and transport wroclaw
+-> Prepared SQL for University of logistics and transport wroclaw
+Fetching info for: Budapest University of Technology and Economics (BME)
+-> Prepared SQL for Budapest University of Technology and Economics (BME)
+Processed 260/395
+Fetching info for: Johns Hopkins University (new)
+-> Prepared SQL for Johns Hopkins University (new)
+Fetching info for: AGH University of Science and Technology
+-> Prepared SQL for AGH University of Science and Technology
+Fetching info for: Kaplan International London
+-> Prepared SQL for Kaplan International London
+Fetching info for: Kaplan International Manchester
+-> Prepared SQL for Kaplan International Manchester
+Fetching info for: Kaplan International Oxford
+-> Prepared SQL for Kaplan International Oxford
+Fetching info for: Kaplan International Torquay
+-> Prepared SQL for Kaplan International Torquay
+Fetching info for: Kaplan International Santa Barbara
+-> Prepared SQL for Kaplan International Santa Barbara
+Fetching info for: Kaplan International Seattle
+-> Prepared SQL for Kaplan International Seattle
+Fetching info for: Kaplan International Toronto
+-> Prepared SQL for Kaplan International Toronto
+Fetching info for: Kaplan International Vancouver
+-> Prepared SQL for Kaplan International Vancouver
+Processed 270/395
+Fetching info for: Kaplan International Dublin
+-> Prepared SQL for Kaplan International Dublin
+Fetching info for: Kaplan International Auckland
+-> Prepared SQL for Kaplan International Auckland
+Fetching info for: CES Dublin
+-> Prepared SQL for CES Dublin
+Fetching info for: CES Toronto
+-> Prepared SQL for CES Toronto
+Fetching info for: CES London
+-> Prepared SQL for CES London
+Fetching info for: CES Oxford
+-> Prepared SQL for CES Oxford
+Fetching info for: CES Edinburgh
+-> Prepared SQL for CES Edinburgh
+Fetching info for: CES Leeds
+-> Prepared SQL for CES Leeds
+Fetching info for: Sprachcaffe St.Julian's
+-> No good data found for Sprachcaffe St.Julian's
+Fetching info for: LSI London
+-> Prepared SQL for LSI London
+Processed 280/395
+Fetching info for: LSI Hampstead
+-> No good data found for LSI Hampstead
+Fetching info for: LSI Brighton
+-> Prepared SQL for LSI Brighton
+Fetching info for: LSI Cambridge
+-> Prepared SQL for LSI Cambridge
+Fetching info for: LSI New York
+-> Prepared SQL for LSI New York
+Fetching info for: LSI Boston
+-> Prepared SQL for LSI Boston
+Fetching info for: LSI San Diego
+-> Prepared SQL for LSI San Diego
+Fetching info for: LSI San Francisco
+-> Prepared SQL for LSI San Francisco
+Fetching info for: LSI Toronto
+-> Prepared SQL for LSI Toronto
+Fetching info for: LSI Vancouver
+-> Prepared SQL for LSI Vancouver
+Fetching info for: LSI Auckland
+-> Prepared SQL for LSI Auckland
+Processed 290/395
+Fetching info for: LSI Brisbane
+-> Prepared SQL for LSI Brisbane
+Fetching info for: STAFFORD HOUSE Brighton
+-> Prepared SQL for STAFFORD HOUSE Brighton
+Fetching info for: STAFFORD HOUSE Cambridge
+-> Prepared SQL for STAFFORD HOUSE Cambridge
+Fetching info for: STAFFORD HOUSE Canterbury
+-> Prepared SQL for STAFFORD HOUSE Canterbury
+Fetching info for: STAFFORD HOUSE London
+-> Prepared SQL for STAFFORD HOUSE London
+Fetching info for: STAFFORD HOUSE Toronto
+-> Prepared SQL for STAFFORD HOUSE Toronto
+Fetching info for: STAFFORD HOUSE Calgary
+-> Prepared SQL for STAFFORD HOUSE Calgary
+Fetching info for: SSLC Toronto
+-> Prepared SQL for SSLC Toronto
+Fetching info for: SSLC Vancouver
+-> No good data found for SSLC Vancouver
+Fetching info for: SSLC Victoria
+-> No good data found for SSLC Victoria
+Processed 300/395
+Fetching info for: ILAC Toronto
+-> Prepared SQL for ILAC Toronto
+Fetching info for: ILAC Vancouver
+-> Prepared SQL for ILAC Vancouver
+Fetching info for: Emerald Cultural ?nstitute Dublin
+-> No good data found for Emerald Cultural ?nstitute Dublin
+Fetching info for: Twin Group London Greenwich
+-> Prepared SQL for Twin Group London Greenwich
+Fetching info for: Twin Group Dublin
+-> Prepared SQL for Twin Group Dublin
+Fetching info for: ILSC Montreal
+-> No good data found for ILSC Montreal
+Fetching info for: ILSC Vancouver
+-> No good data found for ILSC Vancouver
+Fetching info for: Heartland English School Winnipeg
+-> Prepared SQL for Heartland English School Winnipeg
+Fetching info for: Heartland English School Mississauga
+-> Prepared SQL for Heartland English School Mississauga
+Fetching info for: Bayswater College London
+-> Prepared SQL for Bayswater College London
+Processed 310/395
+Fetching info for: Bayswater College Liverpool
+-> Prepared SQL for Bayswater College Liverpool
+Fetching info for: Oxford International English Schools London
+-> Prepared SQL for Oxford International English Schools London
+Fetching info for: Oxford International English Schools Brighton
+-> Prepared SQL for Oxford International English Schools Brighton
+Fetching info for: Oxford International English Schools Oxford
+-> Prepared SQL for Oxford International English Schools Oxford
+Fetching info for: Oxford International English Schools Toronto
+-> Prepared SQL for Oxford International English Schools Toronto
+Fetching info for: Oxford International English Schools Vancouver
+-> Prepared SQL for Oxford International English Schools Vancouver
+Fetching info for: Oxford International English Schools San Diego
+-> Prepared SQL for Oxford International English Schools San Diego
+Fetching info for: UK College of English London
+-> Prepared SQL for UK College of English London
+Fetching info for: Berlitz Manchester
+-> Prepared SQL for Berlitz Manchester
+Fetching info for: Atlas Language Schools St.Julian's
+-> Prepared SQL for Atlas Language Schools St.Julian's
+Processed 320/395
+Fetching info for: ESE St.Julian's
+-> Prepared SQL for ESE St.Julian's
+Fetching info for: Twin Group EastBourne
+-> Prepared SQL for Twin Group EastBourne
+Fetching info for: ILSC Adelaide
+-> No good data found for ILSC Adelaide
+Fetching info for: ILSC Brisbane
+-> No good data found for ILSC Brisbane
+Fetching info for: EC English Boston
+-> Prepared SQL for EC English Boston
+Fetching info for: EC English Los Angeles
+-> Prepared SQL for EC English Los Angeles
+Fetching info for: EC English New York
+-> Prepared SQL for EC English New York
+Fetching info for: EC English San Francisco
+-> Prepared SQL for EC English San Francisco
+Fetching info for: EC English San Diego
+-> Prepared SQL for EC English San Diego
+Fetching info for: EC English Miami
+-> Prepared SQL for EC English Miami
+Processed 330/395
+Fetching info for: EC English Washington
+-> Prepared SQL for EC English Washington
+Fetching info for: EC English London
+-> Prepared SQL for EC English London
+Fetching info for: EC English Oxford
+-> Prepared SQL for EC English Oxford
+Fetching info for: EC English Cambridge
+-> Prepared SQL for EC English Cambridge
+Fetching info for: EC English Brighton
+-> Prepared SQL for EC English Brighton
+Fetching info for: EC English Bristol
+-> Prepared SQL for EC English Bristol
+Fetching info for: EC English Manchester
+-> Prepared SQL for EC English Manchester
+Fetching info for: EC English Toronto
+-> Prepared SQL for EC English Toronto
+Fetching info for: EC English Vancouver
+-> Prepared SQL for EC English Vancouver
+Fetching info for: EC English Montreal
+-> Prepared SQL for EC English Montreal
+Processed 340/395
+Fetching info for: EC English Sydney
+-> Prepared SQL for EC English Sydney
+Fetching info for: Sprachcaffe London
+-> Prepared SQL for Sprachcaffe London
+Fetching info for: Sprachcaffe Brighton
+-> No good data found for Sprachcaffe Brighton
+Fetching info for: Sprachcaffe New York
+-> Prepared SQL for Sprachcaffe New York
+Fetching info for: Sprachcaffe Los Angeles
+-> Prepared SQL for Sprachcaffe Los Angeles
+Fetching info for: Sprachcaffe Victoria
+-> No good data found for Sprachcaffe Victoria
+Fetching info for: Sprachcaffe Vancouver
+-> No good data found for Sprachcaffe Vancouver
+Fetching info for: Sprachcaffe Toronto
+-> No good data found for Sprachcaffe Toronto
+Fetching info for: Sprachcaffe Ottawa
+-> No good data found for Sprachcaffe Ottawa
+Fetching info for: Sprachcaffe Calgary
+-> No good data found for Sprachcaffe Calgary
+Processed 350/395
+Fetching info for: Sprachcaffe Montreal
+-> No good data found for Sprachcaffe Montreal
+Fetching info for: EC English Melbourne
+-> Prepared SQL for EC English Melbourne
+Fetching info for: EC English Gold Coast
+-> Prepared SQL for EC English Gold Coast
+Fetching info for: EC English Brisbane
+-> Prepared SQL for EC English Brisbane
+Fetching info for: EC English Dublin
+-> Prepared SQL for EC English Dublin
+Fetching info for: EC English St. Julian's
+-> Prepared SQL for EC English St. Julian's
+Fetching info for: EC English Cape Town
+-> Prepared SQL for EC English Cape Town
+Fetching info for: EC English Auckland
+-> Prepared SQL for EC English Auckland
+Fetching info for: Kings Education Boston
+-> Prepared SQL for Kings Education Boston
+Fetching info for: Kings Education Los Angeles
+-> Prepared SQL for Kings Education Los Angeles
+Processed 360/395
+Fetching info for: Kings Education New York
+-> Prepared SQL for Kings Education New York
+Fetching info for: Kings Education London
+-> Prepared SQL for Kings Education London
+Fetching info for: Kings Education Oxford
+-> Prepared SQL for Kings Education Oxford
+Fetching info for: Kings Education Brighton
+-> Prepared SQL for Kings Education Brighton
+Fetching info for: Kings Education Bournemouth
+-> Prepared SQL for Kings Education Bournemouth
+Fetching info for: Kaplan International Boston
+-> Prepared SQL for Kaplan International Boston
+Fetching info for: Kaplan International Chicago
+-> Prepared SQL for Kaplan International Chicago
+Fetching info for: Kaplan International Los Angeles
+-> Prepared SQL for Kaplan International Los Angeles
+Fetching info for: Kaplan International New York
+-> Prepared SQL for Kaplan International New York
+Fetching info for: Kaplan International San Francisco
+-> Prepared SQL for Kaplan International San Francisco
+Processed 370/395
+Fetching info for: Kaplan International Bath
+-> Prepared SQL for Kaplan International Bath
+Fetching info for: Kaplan International Bournemouth
+-> Prepared SQL for Kaplan International Bournemouth
+Fetching info for: Kaplan International Cambridge
+-> Prepared SQL for Kaplan International Cambridge
+Fetching info for: Kaplan International Edinburgh
+-> Prepared SQL for Kaplan International Edinburgh
+Fetching info for: Kaplan International Liverpool
+-> Prepared SQL for Kaplan International Liverpool
+Fetching info for: ILSC Melbourne
+-> No good data found for ILSC Melbourne
+Fetching info for: ILSC Sydney
+-> No good data found for ILSC Sydney
+Fetching info for: Berlitz Dublin
+-> Prepared SQL for Berlitz Dublin
+Fetching info for: Atlas Language Schools Dublin
+-> Prepared SQL for Atlas Language Schools Dublin
+Fetching info for: Future Learning Dublin
+-> Prepared SQL for Future Learning Dublin
+Processed 380/395
+Fetching info for: ELI Dublin
+-> Prepared SQL for ELI Dublin
+Fetching info for: ELI Drogheda
+-> Prepared SQL for ELI Drogheda
+Fetching info for: ICOT College Dublin
+-> No good data found for ICOT College Dublin
+Fetching info for: ICOT College Cork
+-> No good data found for ICOT College Cork
+Fetching info for: Gdansk Medical University
+-> Prepared SQL for Gdansk Medical University
+Fetching info for: Medical University of Lodz (new)
+-> Prepared SQL for Medical University of Lodz (new)
+Fetching info for: Wroclaw University of Environmental and Life Sciences
+-> Prepared SQL for Wroclaw University of Environmental and Life Sciences
+Fetching info for: Medical University of Warsaw
+-> Prepared SQL for Medical University of Warsaw
+Fetching info for: Medical University of Lodz
+-> Prepared SQL for Medical University of Lodz
+Fetching info for: BAU International University Batumi
+-> Prepared SQL for BAU International University Batumi
+Processed 390/395
+Fetching info for: Medical University of Warsaw (new)
+-> Prepared SQL for Medical University of Warsaw (new)
+Fetching info for: Poznan Medical University
+-> Prepared SQL for Poznan Medical University
+Fetching info for: Wroclaw Medical University
+-> Prepared SQL for Wroclaw Medical University
+Fetching info for: University of Sarajevo
+-> Prepared SQL for University of Sarajevo
+Fetching info for: TASHKENT MEDICAL ACADEMY
+-> Prepared SQL for TASHKENT MEDICAL ACADEMY
+Done! Generated update_universities.sql

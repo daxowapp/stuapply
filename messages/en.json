@@ -1,0 +1,147 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "programs": "Programs",
+    "universities": "Universities",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "applyNow": "Apply Now",
+    "search": "Search"
+  },
+  "Homepage": {
+    "Hero": {
+      "title": "Your Dream Education Awaits",
+      "subtitle": "Fast university acceptance, often within hours. Free comprehensive support for international students.",
+      "searchPlaceholder": "Search by major, university...",
+      "searchButton": "Search Programs"
+    },
+    "Stats": {
+      "students": "50,000+",
+      "studentsLabel": "Students Helped",
+      "universities": "390+",
+      "universitiesLabel": "Universities",
+      "programs": "17,000+",
+      "programsLabel": "Study Programs"
+    },
+    "Services": {
+      "title": "Our Services",
+      "subtitle": "Everything you need to study in Turkey, completely free.",
+      "counseling": "Educational Counseling",
+      "counselingDesc": "Expert advice tailored to your academic and career goals.",
+      "application": "Application Process",
+      "applicationDesc": "We handle paperwork and ensure fast acceptance rates.",
+      "arrival": "Arrival Support",
+      "arrivalDesc": "Airport pickup and settling-in assistance for peace of mind.",
+      "studentCare": "Student Care",
+      "studentCareDesc": "Ongoing support throughout your entire educational journey.",
+      "fastProcessing": "Fast Processing",
+      "fastProcessingDesc": "Get your university acceptance letter within hours.",
+      "freeService": "100% Free Service",
+      "freeServiceDesc": "Our comprehensive support is completely free for students.",
+      "learnMore": "Learn more"
+    },
+    "WhyUs": {
+      "title": "Why Choose Student Apply?",
+      "subtitle": "We are your trusted partner in navigating the Turkish education system.",
+      "smartestWay": "The smartest way",
+      "smartestWaySub": "to study in Turkey",
+      "community": "Join thriving communities",
+      "confidenceTitle": "Study with Confidence",
+      "confidenceDesc": "Join thousands of successful students who found their perfect university through our free, guaranteed placement service.",
+      "acceptanceRate": "Acceptance Rate",
+      "officialPartners": "Official Partners",
+      "point1Title": "Guaranteed Placement",
+      "point1": "Official university partnerships guarantee your placement.",
+      "point2Title": "Years of Excellence",
+      "point2": "15+ years of experience in international student placement.",
+      "point3Title": "Multilingual Support",
+      "point3": "Dedicated team of advisors speaking multiple languages.",
+      "cta": "Start Your Journey Today"
+    },
+    "CTA": {
+      "title": "Ready to start your journey?",
+      "desc": "Join thousands of international students studying in Turkey. Our process is 100% free and carefully guided."
+    }
+  },
+  "Search": {
+    "title": "Find Your Program",
+    "placeholder": "Search programs or universities...",
+    "resultsFound": "found",
+    "noResults": "No programs found matching your search.",
+    "applyNow": "Apply Now",
+    "filters": "Filters"
+  },
+  "Program": {
+    "officialPrice": "Official Price",
+    "discountedPrice": "Discounted Price",
+    "studyYears": "Duration (Years)",
+    "applyBtn": "Apply for this Program"
+  },
+  "Application": {
+    "title": "Student Application Form",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "submit": "Submit Application",
+    "success": "Your application has been received successfully!",
+    "error": "There was an error submitting your application. Please try again."
+  },
+  "About": {
+    "title": "About Us",
+    "subtitle": "Your Trusted Guide to Education in Turkey",
+    "mission": "Our mission is to bridge the gap between ambitious international students and world-class Turkish universities by providing transparent, efficient, and free placement services.",
+    "vision": "We envision a world where every student has access to global education without administrative barriers or hidden costs.",
+    "whyTrustUs": "Why Trust Us?"
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you. Get in touch with our team.",
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Your Message",
+    "send": "Send Message",
+    "success": "Your message has been sent successfully. We will get back to you soon.",
+    "error": "An error occurred. Please try again.",
+    "office": "Our Office",
+    "location": "Istanbul, Turkey"
+  },
+  "Services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive support from application to graduation.",
+    "admission": "University Admission",
+    "admissionDesc": "100% free placement into top private Turkish universities with guaranteed acceptance.",
+    "visa": "Visa Guidance",
+    "visaDesc": "Step-by-step assistance in navigating the Turkish student visa process.",
+    "housing": "Accommodation & Housing",
+    "housingDesc": "Help with finding safe and affordable student dormitories or apartments near your campus.",
+    "airport": "Airport Transfer",
+    "airportDesc": "VIP welcome at the airport and safe transfer to your accommodation."
+  },
+  "Turkey": {
+    "title": "Study in Turkey",
+    "subtitle": "A bridge between Europe and Asia, offering world-class education and rich cultural experiences.",
+    "whyTurkey": "Why Study in Turkey?",
+    "quality": "High Quality Education",
+    "qualityDesc": "Turkish universities are globally recognized and participate in the Bologna process.",
+    "affordable": "Affordable Living",
+    "affordableDesc": "Experience a high standard of living at a fraction of the cost of western countries.",
+    "strategicLocation": "Strategic Location",
+    "strategicLocationDesc": "Bridging the East and West with rich cultural history.",
+    "vibrantCulture": "Vibrant Culture",
+    "vibrantCultureDesc": "Amazing food, welcoming people, and endless places to explore.",
+    "cities": "Popular Student Cities",
+    "citiesDesc": "Discover the best cities for international students in Turkey. Each city offers a unique blend of academic excellence, rich history, and vibrant student life.",
+    "istanbul": "Istanbul",
+    "istanbulDesc": "The cultural and economic heart of Turkey, home to over 50 universities and a thriving international student community. With its rich history bridging Europe and Asia, students enjoy diverse academic environments and numerous career opportunities in a vibrant setting.",
+    "ankara": "Ankara",
+    "ankaraDesc": "As the political and academic capital, Ankara provides a strong academic environment with affordable living conditions. It's home to top-ranked universities known for research excellence, making it a highly sought-after destination for international students.",
+    "izmir": "Izmir",
+    "izmirDesc": "Located on the beautiful Aegean coast, Izmir offers a perfect balance between academic rigor and a relaxed lifestyle. Known for its welcoming atmosphere, pleasant climate, and vibrant cultural scene, it's a favorite among local and international students alike.",
+    "eskisehir": "Eskişehir",
+    "eskisehirDesc": "Often referred to as the 'Student City' of Turkey, Eskişehir boasts a high student satisfaction rate. It offers affordable prices, convenient transportation, and rich social activities in a very welcoming and student-centric environment.",
+    "antalya": "Antalya",
+    "antalyaDesc": "Famous for its stunning beaches and tourism, Antalya also hosts a growing student population. It offers low living costs, a lively cultural scene, and excellent educational institutions in a beautiful Mediterranean setting."
+  }
+}
