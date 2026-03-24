@@ -8,9 +8,6 @@ import { FilterSidebar, Filters } from '@/components/search/FilterSidebar';
 import { ProgramCard } from '@/components/search/ProgramCard';
 import { Search as SearchIcon, Loader2 } from 'lucide-react';
 
-
-
-
 function SearchContent() {
   const t = useTranslations('Search');
   const searchParams = useSearchParams();
@@ -41,8 +38,6 @@ function SearchContent() {
     );
 
     if (searchTerm) {
-      // Create a search string looking in multiple columns:
-      // Program name or University name.
       query = query.or(`name.ilike.%${searchTerm}%,universities.name.ilike.%${searchTerm}%`);
     }
 
@@ -75,12 +70,10 @@ function SearchContent() {
     setLoading(true);
     setPage(1);
     
-    // Get total count
     const countQuery = buildQuery(true);
     const { count } = await countQuery;
     setTotalCount(count || 0);
 
-    // Get first page
     const query = buildQuery(false)
       .limit(PAGE_SIZE)
       .order('name');
@@ -125,17 +118,22 @@ function SearchContent() {
   };
 
   return (
-    <div className="bg-neutral-50 min-h-screen pb-20">
-      {/* Search Header Banner */}
-      <div className="bg-slate-900 text-white pt-24 pb-12 mb-8 relative">
-        <div className="absolute inset-0 bg-linear-to-r from-blue-900/50 to-purple-900/50 mix-blend-multiply" />
+    <div className="bg-[#FAFAFA] min-h-screen pb-24 selection:bg-slate-900 selection:text-white">
+      {/* Structural Header Banner */}
+      <header className="border-b-2 border-slate-900 bg-white pt-32 pb-16 mb-12 relative overflow-hidden">
+        {/* Architectual decoration */}
+        <div className="absolute top-0 right-10 w-px h-full bg-slate-100 hidden lg:block"></div>
+        <div className="absolute top-0 right-40 w-px h-full bg-slate-100 hidden lg:block"></div>
+        
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">{t('title')}</h1>
-            <p className="text-slate-300 text-lg max-w-2xl">Browse thousands of programs across top universities to find your perfect fit.</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-slate-900 mb-6 uppercase">{t('title')}</h1>
+            <p className="text-slate-600 text-xs md:text-sm font-bold tracking-[0.2em] max-w-2xl uppercase leading-relaxed border-l-4 border-slate-900 pl-6 py-1">
+              Browse the academic catalog. Examine programs across top institutions to find your structural fit.
+            </p>
         </div>
-      </div>
+      </header>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row gap-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row gap-12">
         {/* Filters Sidebar */}
         <div className="w-full md:w-80 shrink-0">
           <FilterSidebar 
@@ -148,15 +146,15 @@ function SearchContent() {
 
         {/* Results */}
         <div className="flex-1">
-          <div className="flex justify-between items-center mb-6 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-             <div className="text-slate-600 font-medium">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 border-b-2 border-slate-900 pb-4 gap-4">
+             <div className="text-slate-900 font-bold tracking-widest uppercase text-xs">
                 {totalCount !== null && (
-                  <span>Showing {programs.length} of <strong className="text-slate-900">{totalCount}</strong> {t('resultsFound') || 'results'}</span>
+                  <span>INDEX: {programs.length} / <strong className="font-black text-slate-900">{totalCount}</strong> {t('resultsFound') || 'RECORDS'}</span>
                 )}
              </div>
-             <div className="flex items-center gap-2">
-                <span className="text-sm text-slate-500">Sort by:</span>
-                <select className="text-sm bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 font-medium text-slate-800 outline-none focus:border-blue-500 cursor-pointer">
+             <div className="flex items-center gap-3">
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hidden sm:inline">SORT:</span>
+                <select className="text-xs font-bold uppercase tracking-widest border-2 border-slate-900 bg-white px-4 py-2 text-slate-900 outline-none focus:ring-0 cursor-pointer hover:bg-slate-900 hover:text-white transition-colors">
                     <option>Recommended</option>
                     <option>Price: Low to High</option>
                     <option>Price: High to Low</option>
@@ -165,35 +163,33 @@ function SearchContent() {
           </div>
 
           {loading ? (
-             <div className="flex flex-col items-center justify-center py-32">
-                <div className="animate-spin rounded-full h-12 w-12 border-4 border-slate-100 border-t-blue-600 mb-4"></div>
-                <p className="text-slate-500 font-medium animate-pulse">Loading programs...</p>
+             <div className="flex flex-col items-center justify-center py-32 border-2 border-slate-900 border-dashed bg-white">
+                <div className="animate-spin h-10 w-10 border-4 border-slate-200 border-t-slate-900 rounded-none mb-6"></div>
+                <p className="text-slate-900 font-bold tracking-widest uppercase text-xs animate-pulse">Retrieving records...</p>
              </div>
           ) : programs.length === 0 ? (
-             <div className="text-center py-32 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center">
-               <div className="bg-slate-50 p-4 rounded-full mb-4">
-                  <SearchIcon className="h-8 w-8 text-slate-400" />
-               </div>
-               <h3 className="text-xl font-bold text-slate-900 mb-2">No programs found</h3>
-               <p className="text-slate-500 max-w-md mx-auto">{t('noResults')}</p>
+             <div className="text-center py-32 bg-white border-2 border-slate-900 flex flex-col items-center">
+               <SearchIcon className="h-12 w-12 text-slate-300 mb-6" strokeWidth={1} />
+               <h3 className="text-2xl font-black text-slate-900 tracking-tighter mb-2 uppercase">Zero Records</h3>
+               <p className="text-slate-600 max-w-md mx-auto font-bold tracking-[0.2em] uppercase text-[10px] mt-4 leading-relaxed">{t('noResults')}</p>
              </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 gap-5">
+              <div className="grid grid-cols-1 gap-6">
                 {programs.map(p => (
                    <ProgramCard key={p.id} program={p} />
                 ))}
               </div>
               
               {hasMore && (
-                <div className="mt-8 flex justify-center">
+                <div className="mt-12 flex justify-center">
                   <button 
                     onClick={loadMore}
                     disabled={loadingMore}
-                    className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 text-slate-700 font-medium rounded-xl hover:bg-slate-50 transition-colors disabled:opacity-50"
+                    className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-transparent border-2 border-slate-900 text-slate-900 font-bold uppercase tracking-widest text-xs hover:bg-slate-900 hover:text-white transition-all disabled:opacity-50 w-full sm:w-auto"
                   >
-                    {loadingMore ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
-                    {loadingMore ? 'Loading...' : 'Load More Programs'}
+                    {loadingMore ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
+                    {loadingMore ? 'RETRIEVING' : 'LOAD ADDITIONAL RECORDS'}
                   </button>
                 </div>
               )}
@@ -208,8 +204,9 @@ function SearchContent() {
 export default function SearchPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
-        <Loader2 className="w-12 h-12 text-blue-600 animate-spin" />
+      <div className="min-h-screen bg-[#FAFAFA] flex flex-col items-center justify-center">
+        <div className="animate-spin h-12 w-12 border-4 border-slate-200 border-t-slate-900 rounded-none mb-6"></div>
+        <p className="text-slate-900 font-bold tracking-widest uppercase text-xs animate-pulse">Initializing...</p>
       </div>
     }>
       <SearchContent />

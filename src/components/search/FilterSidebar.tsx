@@ -39,94 +39,94 @@ export function FilterSidebar({ searchTerm, setSearchTerm, filters, setFilters }
   };
 
   return (
-    <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm sticky top-28">
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-        <div className="flex items-center gap-2">
-            <SlidersHorizontal className="h-5 w-5 text-blue-600" />
-            <h2 className="text-lg font-bold text-slate-900">{t('filters') || 'Filters'}</h2>
+    <div className="bg-[#FAFAFA] p-8 border-2 border-slate-900 sticky top-28 mb-8 md:mb-0">
+      <div className="flex items-center justify-between mb-8 pb-4 border-b-2 border-slate-900">
+        <div className="flex items-center gap-3 text-slate-900">
+            <SlidersHorizontal className="h-5 w-5" strokeWidth={2} />
+            <h2 className="text-xl font-black tracking-tighter uppercase">{t('filters') || 'FILTERS'}</h2>
         </div>
       </div>
       
-      <div className="space-y-8">
+      <div className="space-y-10">
         <div>
-          <label className="text-sm font-bold text-slate-900 mb-3 block">Search Programs</label>
+          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block">Query</label>
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-900" strokeWidth={1.5} />
             <Input 
-              placeholder={t('placeholder')} 
+              placeholder={t('placeholder') || 'SEARCH CATALOG'} 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-9 bg-slate-50 border-slate-200 focus-visible:ring-blue-500 h-11 rounded-xl text-sm"
+              className="pl-12 bg-white border-2 border-slate-900 focus-visible:ring-0 focus-visible:border-slate-900 focus-visible:bg-slate-50 h-14 rounded-none text-sm font-bold tracking-wide uppercase placeholder:text-slate-400"
             />
           </div>
         </div>
 
         <div>
-          <label className="text-sm font-bold text-slate-900 mb-3 block">University Name</label>
+          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block">Institution</label>
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-900" strokeWidth={1.5} />
             <Input 
-              placeholder="e.g. Istanbul University" 
+              placeholder="E.G. ISTANBUL UNIVERSITY" 
               value={filters.university}
               onChange={(e) => setFilters(prev => ({ ...prev, university: e.target.value }))}
-              className="pl-9 bg-slate-50 border-slate-200 focus-visible:ring-blue-500 h-11 rounded-xl text-sm"
+              className="pl-12 bg-white border-2 border-slate-900 focus-visible:ring-0 focus-visible:border-slate-900 focus-visible:bg-slate-50 h-14 rounded-none text-sm font-bold tracking-wide uppercase placeholder:text-slate-400"
             />
           </div>
         </div>
 
         <div>
-          <label className="text-sm font-bold text-slate-900 mb-3 block">Degree Level</label>
-          <div className="space-y-3">
+           <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block border-b-2 border-slate-900 pb-2">Level</label>
+          <div className="space-y-4 mt-4">
             {['Associate', 'Bachelor', 'Master', 'Phd'].map(level => (
-              <label key={level} className="flex items-center gap-3 cursor-pointer group">
-                <div className="relative flex items-center justify-center w-5 h-5">
+              <label key={level} className="flex items-center gap-4 cursor-pointer group">
+                <div className="relative flex items-center justify-center w-6 h-6">
                     <input 
                       type="checkbox" 
                       checked={filters.levels.includes(level)}
                       onChange={() => toggleLevel(level)}
-                      className="peer w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500 appearance-none bg-slate-50 checked:bg-blue-600 checked:border-blue-600 transition-colors" 
+                      className="peer w-6 h-6 rounded-none border-2 border-slate-900 text-slate-900 focus:ring-slate-900 appearance-none bg-white checked:bg-slate-900 checked:border-slate-900 transition-colors cursor-pointer" 
                     />
-                    <svg className="absolute w-3.5 h-3.5 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    <svg className="absolute w-4 h-4 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
+                        <path strokeLinecap="square" strokeLinejoin="miter" d="M5 13l4 4L19 7" />
                     </svg>
                 </div>
-                <span className="text-sm font-medium text-slate-600 group-hover:text-slate-900 transition-colors">{level}</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-600 group-hover:text-slate-900 transition-colors">{level}</span>
               </label>
             ))}
           </div>
         </div>
 
-        <div className="pt-6 border-t border-slate-100">
-          <label className="text-sm font-bold text-slate-900 mb-3 block">Language of Instruction</label>
-          <div className="space-y-3">
+        <div>
+          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block border-b-2 border-slate-900 pb-2">Instruction</label>
+          <div className="space-y-4 mt-4">
             {['English', 'Turkish'].map(lang => (
-              <label key={lang} className="flex items-center gap-3 cursor-pointer group">
-                 <div className="relative flex items-center justify-center w-5 h-5">
+              <label key={lang} className="flex items-center gap-4 cursor-pointer group">
+                 <div className="relative flex items-center justify-center w-6 h-6">
                     <input 
                       type="checkbox" 
                       checked={filters.languages.includes(lang)}
                       onChange={() => toggleLanguage(lang)}
-                      className="peer w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500 appearance-none bg-slate-50 checked:bg-blue-600 checked:border-blue-600 transition-colors" 
+                      className="peer w-6 h-6 rounded-none border-2 border-slate-900 text-slate-900 focus:ring-slate-900 appearance-none bg-white checked:bg-slate-900 checked:border-slate-900 transition-colors cursor-pointer" 
                     />
-                    <svg className="absolute w-3.5 h-3.5 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    <svg className="absolute w-4 h-4 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
+                        <path strokeLinecap="square" strokeLinejoin="miter" d="M5 13l4 4L19 7" />
                     </svg>
                 </div>
-                <span className="text-sm font-medium text-slate-600 group-hover:text-slate-900 transition-colors">{lang}</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-600 group-hover:text-slate-900 transition-colors">{lang}</span>
               </label>
             ))}
           </div>
         </div>
         
-        <div className="pt-6 border-t border-slate-100">
-          <label className="text-sm font-bold text-slate-900 mb-3 block">Max Price / Year ($)</label>
-          <div className="relative">
+        <div>
+          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block border-b-2 border-slate-900 pb-2">Max Price ($)</label>
+          <div className="relative mt-4">
             <Input 
               type="number"
-              placeholder="e.g. 5000" 
+              placeholder="E.G. 5000" 
               value={filters.maxPrice}
               onChange={(e) => setFilters(prev => ({ ...prev, maxPrice: e.target.value }))}
-              className="bg-slate-50 border-slate-200 focus-visible:ring-blue-500 h-11 rounded-xl text-sm"
+              className="bg-white border-2 border-slate-900 focus-visible:ring-0 focus-visible:border-slate-900 focus-visible:bg-slate-50 h-14 rounded-none text-sm font-bold tracking-wide uppercase placeholder:text-slate-400"
             />
           </div>
         </div>
