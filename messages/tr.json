@@ -243,7 +243,20 @@
     "noResults": "Üniversite bulunamadı",
     "noResultsDesc": "Arama teriminizi değiştirmeyi veya diğer şehirleri keşfetmeyi deneyin.",
     "programsAvailable": "Mevcut Program",
-    "exploreCampus": "Kampüsü Keşfet"
+    "exploreCampus": "Kampüsü Keşfet",
+    "filters": "Filtreler",
+    "filterByCity": "Şehir",
+    "allCities": "Tüm Şehirler",
+    "sortBy": "Sırala",
+    "sortDefault": "Önerilen",
+    "sortNameAsc": "İsim: A → Z",
+    "sortNameDesc": "İsim: Z → A",
+    "sortProgramsDesc": "En Çok Program",
+    "showingResults": "{count} üniversite gösteriliyor",
+    "clearFilters": "Filtreleri Temizle",
+    "viewDetails": "Detayları Gör",
+    "programs": "Program",
+    "founded": "Kuruluş"
   },
   "UniversityDetail": {
     "backToUniversities": "Üniversitelere Dön",

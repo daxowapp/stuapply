@@ -243,7 +243,20 @@
     "noResults": "No universities found",
     "noResultsDesc": "Try adjusting your search term or exploring other cities.",
     "programsAvailable": "Programs Available",
-    "exploreCampus": "Explore Campus"
+    "exploreCampus": "Explore Campus",
+    "filters": "Filters",
+    "filterByCity": "City",
+    "allCities": "All Cities",
+    "sortBy": "Sort By",
+    "sortDefault": "Recommended",
+    "sortNameAsc": "Name: A → Z",
+    "sortNameDesc": "Name: Z → A",
+    "sortProgramsDesc": "Most Programs",
+    "showingResults": "Showing {count} universities",
+    "clearFilters": "Clear Filters",
+    "viewDetails": "View Details",
+    "programs": "Programs",
+    "founded": "Founded"
   },
   "UniversityDetail": {
     "backToUniversities": "Back to Universities",
