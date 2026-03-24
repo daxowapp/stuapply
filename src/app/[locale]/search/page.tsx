@@ -31,11 +31,11 @@ function SearchContent() {
 
   const PAGE_SIZE = 20;
 
-  const SELECTED_COLUMNS = 'id,name,level,language,official_price,discounted_price,currency,universities!inner(name)';
+  const SELECTED_COLUMNS = 'id,name,level,language,official_price,discounted_price,currency,universities(name)';
 
   const applyFilters = useCallback((query: any) => {
     if (searchTerm) {
-      query = query.or(`name.ilike.%${searchTerm}%,universities.name.ilike.%${searchTerm}%`);
+      query = query.ilike('name', `%${searchTerm}%`);
     }
 
     if (filters.levels.length > 0) {
