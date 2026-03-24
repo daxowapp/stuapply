@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Target, Lightbulb, Users, CheckCircle2 } from 'lucide-react';
+import { Link } from '@/i18n/routing';
 
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
@@ -17,18 +18,18 @@ export default function AboutPage() {
   const values = [
     {
       icon: <Target className="h-6 w-6 text-blue-500" />,
-      title: "Mission-Driven",
-      description: "Dedicated to eliminating barriers to international education.",
+      title: t('valueMission'),
+      description: t('valueMissionDesc'),
     },
     {
       icon: <Lightbulb className="h-6 w-6 text-yellow-500" />,
-      title: "Transparent & Free",
-      description: "No hidden fees. Our placement services are 100% sponsored by universities.",
+      title: t('valueTransparent'),
+      description: t('valueTransparentDesc'),
     },
     {
       icon: <Users className="h-6 w-6 text-emerald-500" />,
-      title: "Student-First",
-      description: "From application to graduation, the student's success is our core focus.",
+      title: t('valueStudent'),
+      description: t('valueStudentDesc'),
     }
   ];
 
@@ -50,7 +51,7 @@ export default function AboutPage() {
           {/* Mission */}
           <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-md transition-shadow">
             <div className="absolute top-0 left-0 w-2 h-full bg-blue-500 rounded-l-3xl"></div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">{t('missionTitle')}</h2>
             <p className="text-lg text-slate-600 leading-relaxed">
               {t('mission')}
             </p>
@@ -59,7 +60,7 @@ export default function AboutPage() {
           {/* Vision */}
           <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-md transition-shadow">
              <div className="absolute top-0 left-0 w-2 h-full bg-purple-500 rounded-l-3xl"></div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Our Vision</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">{t('visionTitle')}</h2>
              <p className="text-lg text-slate-600 leading-relaxed">
               {t('vision')}
             </p>
@@ -94,13 +95,13 @@ export default function AboutPage() {
          <div className="bg-slate-900 rounded-3xl p-12 text-white relative overflow-hidden">
             <div className="absolute -right-24 -top-24 w-64 h-64 bg-blue-600 rounded-full blur-3xl opacity-30 z-0" />
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-6">Ready to Start Your Journey?</h2>
+              <h2 className="text-3xl font-bold mb-6">{t('ctaTitle')}</h2>
               <p className="text-slate-300 text-lg mb-8 max-w-xl mx-auto">
-                Join thousands of international students who have successfully placed into top Turkish universities through Student Apply.
+                {t('ctaDesc')}
               </p>
-              <a href="/apply" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-300 disabled:pointer-events-none disabled:opacity-50 h-12 bg-white text-slate-900 hover:bg-slate-100 shadow-md hover:shadow-lg rounded-full px-8">
-                Apply Now For Free
-              </a>
+              <Link href="/apply" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-300 disabled:pointer-events-none disabled:opacity-50 h-12 bg-white text-slate-900 hover:bg-slate-100 shadow-md hover:shadow-lg rounded-full px-8">
+                {t('ctaButton')}
+              </Link>
             </div>
          </div>
       </div>

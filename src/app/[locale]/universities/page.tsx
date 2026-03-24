@@ -11,7 +11,7 @@ import { Input } from '@/components/ui/input';
 
 
 export default function UniversitiesPage() {
-  const t = useTranslations('Navigation');
+  const t = useTranslations('Universities');
   const locale = useLocale();
   
   const [searchTerm, setSearchTerm] = useState('');
@@ -57,23 +57,23 @@ export default function UniversitiesPage() {
         
         <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-sm">
-            Explore Universities <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-emerald-400">in Turkey</span>
+            {t('title')} <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-emerald-400">{t('titleHighlight')}</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-12">
-            Discover top-ranked private and public institutions offering world-class education.
+            {t('subtitle')}
           </p>
 
           {/* Search Box */}
           <div className="max-w-2xl mx-auto relative group">
              <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none">
-                <Search className="h-6 w-6 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
+                 <Search className="h-6 w-6 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
              </div>
              <input
-               type="text"
-               placeholder="Search by university name or city..."
-               className="w-full h-16 pl-14 pr-6 bg-white/10 hover:bg-white/15 focus:bg-white/20 backdrop-blur-xl border border-white/20 rounded-full text-white placeholder-slate-400 outline-none ring-0 focus:ring-4 focus:ring-blue-500/30 transition-all text-lg shadow-2xl"
-               value={searchTerm}
-               onChange={(e) => setSearchTerm(e.target.value)}
+                type="text"
+                placeholder={t('searchPlaceholder')}
+                className="w-full h-16 pl-14 pr-6 bg-white/10 hover:bg-white/15 focus:bg-white/20 backdrop-blur-xl border border-white/20 rounded-full text-white placeholder-slate-400 outline-none ring-0 focus:ring-4 focus:ring-blue-500/30 transition-all text-lg shadow-2xl"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
              />
           </div>
         </div>
@@ -83,17 +83,17 @@ export default function UniversitiesPage() {
         {/* Results */}
         {loading ? (
              <div className="flex flex-col items-center justify-center py-32 bg-white/60 backdrop-blur-sm rounded-[2rem] border border-slate-200/50 shadow-sm mt-8">
-                <div className="animate-spin rounded-full h-12 w-12 border-4 border-slate-200 border-t-blue-600 mb-4 shadow-sm"></div>
-                <p className="text-slate-500 font-medium animate-pulse">Loading universities...</p>
+                 <div className="animate-spin rounded-full h-12 w-12 border-4 border-slate-200 border-t-blue-600 mb-4 shadow-sm"></div>
+                 <p className="text-slate-500 font-medium animate-pulse">{t('loading')}</p>
              </div>
         ) : universities.length === 0 ? (
            <div className="flex justify-center w-full">
              <div className="text-center py-32 bg-white/60 backdrop-blur-sm rounded-[2rem] border border-dashed border-slate-300 mt-8 w-full max-w-lg">
-                <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
-                  <Building2 className="h-10 w-10 text-slate-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">No universities found</h3>
-                <p className="text-slate-500 max-w-sm mx-auto">Try adjusting your search term or exploring other cities.</p>
+                 <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+                   <Building2 className="h-10 w-10 text-slate-400" />
+                 </div>
+                 <h3 className="text-2xl font-bold text-slate-900 mb-3">{t('noResults')}</h3>
+                 <p className="text-slate-500 max-w-sm mx-auto">{t('noResultsDesc')}</p>
              </div>
            </div>
         ) : (
@@ -129,15 +129,15 @@ export default function UniversitiesPage() {
                       </div>
                       <div className="flex items-center text-slate-600 bg-slate-50 rounded-xl p-3 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 transition-colors">
                          <GraduationCap className="h-5 w-5 mr-3 text-indigo-500" />
-                         <span className="font-medium text-[15px]">{uni.programs?.[0]?.count || 0} Programs Available</span>
+                         <span className="font-medium text-[15px]">{uni.programs?.[0]?.count || 0} {t('programsAvailable')}</span>
                       </div>
                     </div>
                   </div>
                   
                   <div className="relative z-10 flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
-                     <span className="text-slate-500 text-sm font-medium">Explore Campus</span>
+                     <span className="text-slate-500 text-sm font-medium">{t('exploreCampus')}</span>
                      <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-sm">
-                       <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+                        <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
                      </div>
                   </div>
                 </Link>

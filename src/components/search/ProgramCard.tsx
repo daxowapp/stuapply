@@ -17,7 +17,7 @@ export function ProgramCard({ program }: { program: any }) {
         <div className="flex justify-between items-start mb-6 gap-4">
           <div>
             <h3 className="text-2xl lg:text-3xl font-black text-slate-900 tracking-tighter leading-none mb-3 group-hover:text-white transition-colors">
-              {program.name}
+              {program.name_translations?.[locale] || program.name}
             </h3>
             <div className="flex items-center text-slate-600 text-sm font-bold group-hover:text-slate-300 transition-colors tracking-widest uppercase">
               <span className="truncate">{program.universities?.names_translations?.[locale] || program.universities?.name}</span>

@@ -57,10 +57,10 @@ export default function CityPage({ params }: { params: Promise<{ locale: string,
         <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
           <Link href="/turkey" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium mb-8 backdrop-blur-md">
             <ChevronRight className="w-4 h-4 rotate-180" />
-            <span>Back to Turkey</span>
+            <span>{t('backToTurkey')}</span>
           </Link>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-sm">
-            Study in <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-emerald-400">{cityName}</span>
+            {t('studyIn')} <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-emerald-400">{cityName}</span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-12 font-light">
             {cityDesc}
@@ -70,7 +70,7 @@ export default function CityPage({ params }: { params: Promise<{ locale: string,
 
       <div className="container mx-auto px-4 max-w-7xl -mt-8 relative z-20">
         <div className="text-center mb-8">
-           <h2 className="text-3xl font-bold text-slate-900 mb-4">Universities in {cityName}</h2>
+           <h2 className="text-3xl font-bold text-slate-900 mb-4">{t('universitiesIn')} {cityName}</h2>
            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full"></div>
         </div>
 
@@ -78,15 +78,15 @@ export default function CityPage({ params }: { params: Promise<{ locale: string,
         {loading ? (
              <div className="flex flex-col items-center justify-center py-32 bg-white/60 backdrop-blur-sm rounded-[2rem] border border-slate-200/50 shadow-sm mt-8">
                 <div className="animate-spin rounded-full h-12 w-12 border-4 border-slate-200 border-t-blue-600 mb-4 shadow-sm"></div>
-                <p className="text-slate-500 font-medium animate-pulse">Loading universities...</p>
+                <p className="text-slate-500 font-medium animate-pulse">{t('loadingUniversities')}</p>
              </div>
         ) : universities.length === 0 ? (
              <div className="text-center py-32 bg-white/60 backdrop-blur-sm rounded-[2rem] border border-dashed border-slate-300 mt-8">
                 <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
                   <Building2 className="h-10 w-10 text-slate-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3">No universities found</h3>
-                <p className="text-slate-500 max-w-sm mx-auto">We couldn't find any universities listed for {cityName} yet.</p>
+                <h3 className="text-2xl font-bold text-slate-900 mb-3">{t('noUniversitiesFound')}</h3>
+                <p className="text-slate-500 max-w-sm mx-auto">{t('noUniversitiesDesc', { city: cityName })}</p>
              </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-8">
@@ -121,13 +121,13 @@ export default function CityPage({ params }: { params: Promise<{ locale: string,
                       </div>
                       <div className="flex items-center text-slate-600 bg-slate-50 rounded-xl p-3 border border-slate-100 group-hover:bg-white group-hover:border-blue-100 transition-colors">
                          <GraduationCap className="h-5 w-5 mr-3 text-indigo-500" />
-                         <span className="font-medium text-[15px]">{uni.programs?.[0]?.count || 0} Programs Available</span>
+                         <span className="font-medium text-[15px]">{uni.programs?.[0]?.count || 0} {t('programsAvailable')}</span>
                       </div>
                     </div>
                   </div>
                   
                   <div className="relative z-10 flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
-                     <span className="text-slate-500 text-sm font-medium">Explore Campus</span>
+                     <span className="text-slate-500 text-sm font-medium">{t('exploreCampus')}</span>
                      <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-sm">
                        <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
                      </div>

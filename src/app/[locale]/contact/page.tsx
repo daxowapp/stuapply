@@ -44,8 +44,8 @@ export default function ContactPage() {
               
               <div className="relative z-10 space-y-10">
                 <div>
-                  <h3 className="text-2xl font-bold mb-2">Get in Touch</h3>
-                  <p className="text-slate-400">Our team is available 24/7 to assist you with your application journey.</p>
+                  <h3 className="text-2xl font-bold mb-2">{t('getInTouch')}</h3>
+                  <p className="text-slate-400">{t('getInTouchDesc')}</p>
                 </div>
 
                 <div className="space-y-6">
@@ -67,7 +67,7 @@ export default function ContactPage() {
                       <Phone className="h-6 w-6 text-emerald-400" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg">Phone / WhatsApp</h4>
+                      <h4 className="font-semibold text-lg">{t('phoneWhatsApp')}</h4>
                       <p className="text-slate-400 mt-1">+90 545 308 1000<br/>+90 212 916 1616</p>
                     </div>
                   </div>
@@ -77,7 +77,7 @@ export default function ContactPage() {
                       <Mail className="h-6 w-6 text-purple-400" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg">Email</h4>
+                      <h4 className="font-semibold text-lg">{t('emailLabel')}</h4>
                       <p className="text-slate-400 mt-1">support@stuapply.com</p>
                     </div>
                   </div>
@@ -94,13 +94,13 @@ export default function ContactPage() {
                     <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mb-6 animate-in zoom-in duration-500">
                       <CheckCircle2 className="h-10 w-10 text-emerald-600" />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Message Sent!</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{t('messageSent')}</h3>
                     <p className="text-slate-600">{t('success')}</p>
                     <button 
                       onClick={() => setStatus('idle')}
                       className="mt-8 text-blue-600 font-medium hover:underline"
                     >
-                      Send another message
+                      {t('sendAnother')}
                     </button>
                  </div>
                ) : (
@@ -108,17 +108,17 @@ export default function ContactPage() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="text-sm font-bold text-slate-700">{t('name')}</label>
-                        <Input required placeholder="John Doe" className="h-12 bg-slate-50 border-slate-200 rounded-xl" />
+                        <Input required placeholder={t('namePlaceholder')} className="h-12 bg-slate-50 border-slate-200 rounded-xl" />
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-bold text-slate-700">{t('email')}</label>
-                        <Input required type="email" placeholder="john@example.com" className="h-12 bg-slate-50 border-slate-200 rounded-xl" />
+                        <Input required type="email" placeholder={t('emailPlaceholder')} className="h-12 bg-slate-50 border-slate-200 rounded-xl" />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-slate-700">Subject (Optional)</label>
-                      <Input placeholder="How can we help?" className="h-12 bg-slate-50 border-slate-200 rounded-xl" />
+                      <label className="text-sm font-bold text-slate-700">{t('subject')}</label>
+                      <Input placeholder={t('subjectPlaceholder')} className="h-12 bg-slate-50 border-slate-200 rounded-xl" />
                     </div>
 
                     <div className="space-y-2">
@@ -127,7 +127,7 @@ export default function ContactPage() {
                         required 
                         rows={5}
                         className="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                        placeholder="Write your message here..."
+                        placeholder={t('messagePlaceholder')}
                       />
                     </div>
 
@@ -137,7 +137,7 @@ export default function ContactPage() {
                       className="w-full flex items-center justify-center h-12 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors disabled:opacity-70"
                     >
                       {status === 'loading' ? (
-                        <><Loader2 className="mr-2 h-5 w-5 animate-spin"/> Sending...</>
+                        <><Loader2 className="mr-2 h-5 w-5 animate-spin"/> {t('sending')}</>
                       ) : (
                         <><Send className="mr-2 h-5 w-5"/> {t('send')}</>
                       )}

@@ -36,7 +36,7 @@ export function Header() {
              {t('services')}
           </Link>
           <Link href="/turkey" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
-             Study in Turkey
+             {t('turkey')}
           </Link>
           <Link href="/about" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
              {t('about')}

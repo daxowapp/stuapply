@@ -3,7 +3,7 @@ import { Link } from '@/i18n/routing';
 import { GraduationCap, Mail, MapPin, Phone } from 'lucide-react';
 
 export function Footer() {
-  const t = useTranslations('Navigation');
+  const t = useTranslations('Footer');
 
   return (
     <footer className="bg-slate-900 pt-16 pb-8 text-slate-300">
@@ -21,51 +21,51 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-              Your Gateway to Higher Education in Turkey. Fast acceptance, comprehensive support, and free counseling.
+              {t('description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="md:col-span-1">
-            <h3 className="text-white font-bold mb-6 tracking-wide">Company</h3>
+            <h3 className="text-white font-bold mb-6 tracking-wide">{t('company')}</h3>
             <ul className="space-y-3.5 text-sm text-slate-400">
               <li>
-                <Link href="/search" className="hover:text-white transition-colors">Find a Program</Link>
+                <Link href="/search" className="hover:text-white transition-colors">{t('findProgram')}</Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">Our Services</Link>
+                <Link href="/services" className="hover:text-white transition-colors">{t('ourServices')}</Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
+                <Link href="/about" className="hover:text-white transition-colors">{t('aboutUs')}</Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+                <Link href="/contact" className="hover:text-white transition-colors">{t('contact')}</Link>
               </li>
             </ul>
           </div>
 
           {/* Degrees & Programs */}
           <div className="md:col-span-1">
-            <h3 className="text-white font-bold mb-6 tracking-wide">Study in Turkey</h3>
+            <h3 className="text-white font-bold mb-6 tracking-wide">{t('studyInTurkey')}</h3>
             <ul className="space-y-3.5 text-sm text-slate-400">
               <li>
-                <Link href="/search?level=bachelor" className="hover:text-white transition-colors">Bachelor's Degrees</Link>
+                <Link href="/search?level=bachelor" className="hover:text-white transition-colors">{t('bachelorsDegrees')}</Link>
               </li>
               <li>
-                <Link href="/search?level=master" className="hover:text-white transition-colors">Master's Degrees</Link>
+                <Link href="/search?level=master" className="hover:text-white transition-colors">{t('mastersDegrees')}</Link>
               </li>
               <li>
-                <Link href="/search?level=phd" className="hover:text-white transition-colors">PhD Programs</Link>
+                <Link href="/search?level=phd" className="hover:text-white transition-colors">{t('phdPrograms')}</Link>
               </li>
               <li>
-                <Link href="/search?language=english" className="hover:text-white transition-colors">English Taught Programs</Link>
+                <Link href="/search?language=english" className="hover:text-white transition-colors">{t('englishPrograms')}</Link>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="md:col-span-1">
-            <h3 className="text-white font-bold mb-6 tracking-wide">Get in Touch</h3>
+            <h3 className="text-white font-bold mb-6 tracking-wide">{t('getInTouch')}</h3>
             <ul className="space-y-4 text-sm text-slate-400">
               <li className="flex gap-3 items-start">
                 <MapPin className="h-5 w-5 text-blue-500 shrink-0 mt-0.5" />
@@ -88,7 +88,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} Student Apply. All rights reserved.</p>
+          <p>{t('copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </div>
     </footer>

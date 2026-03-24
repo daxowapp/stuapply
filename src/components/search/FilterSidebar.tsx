@@ -38,22 +38,34 @@ export function FilterSidebar({ searchTerm, setSearchTerm, filters, setFilters }
     }));
   };
 
+  const levelOptions = [
+    { value: 'Associate', label: t('levelAssociate') },
+    { value: 'Bachelor', label: t('levelBachelor') },
+    { value: 'Master', label: t('levelMaster') },
+    { value: 'Phd', label: t('levelPhd') },
+  ];
+
+  const langOptions = [
+    { value: 'English', label: t('langEnglish') },
+    { value: 'Turkish', label: t('langTurkish') },
+  ];
+
   return (
     <div className="bg-[#FAFAFA] p-8 border-2 border-slate-900 sticky top-28 mb-8 md:mb-0">
       <div className="flex items-center justify-between mb-8 pb-4 border-b-2 border-slate-900">
         <div className="flex items-center gap-3 text-slate-900">
             <SlidersHorizontal className="h-5 w-5" strokeWidth={2} />
-            <h2 className="text-xl font-black tracking-tighter uppercase">{t('filters') || 'FILTERS'}</h2>
+            <h2 className="text-xl font-black tracking-tighter uppercase">{t('filters')}</h2>
         </div>
       </div>
       
       <div className="space-y-10">
         <div>
-          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block">Query</label>
+          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block">{t('query')}</label>
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-900" strokeWidth={1.5} />
             <Input 
-              placeholder={t('placeholder') || 'SEARCH CATALOG'} 
+              placeholder={t('placeholder')} 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-12 bg-white border-2 border-slate-900 focus-visible:ring-0 focus-visible:border-slate-900 focus-visible:bg-slate-50 h-14 rounded-none text-sm font-bold tracking-wide uppercase placeholder:text-slate-400"
@@ -62,11 +74,11 @@ export function FilterSidebar({ searchTerm, setSearchTerm, filters, setFilters }
         </div>
 
         <div>
-          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block">Institution</label>
+          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block">{t('institution')}</label>
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-900" strokeWidth={1.5} />
             <Input 
-              placeholder="E.G. ISTANBUL UNIVERSITY" 
+              placeholder={t('institutionPlaceholder')} 
               value={filters.university}
               onChange={(e) => setFilters(prev => ({ ...prev, university: e.target.value }))}
               className="pl-12 bg-white border-2 border-slate-900 focus-visible:ring-0 focus-visible:border-slate-900 focus-visible:bg-slate-50 h-14 rounded-none text-sm font-bold tracking-wide uppercase placeholder:text-slate-400"
@@ -75,55 +87,55 @@ export function FilterSidebar({ searchTerm, setSearchTerm, filters, setFilters }
         </div>
 
         <div>
-           <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block border-b-2 border-slate-900 pb-2">Level</label>
+           <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block border-b-2 border-slate-900 pb-2">{t('level')}</label>
           <div className="space-y-4 mt-4">
-            {['Associate', 'Bachelor', 'Master', 'Phd'].map(level => (
-              <label key={level} className="flex items-center gap-4 cursor-pointer group">
+            {levelOptions.map(opt => (
+              <label key={opt.value} className="flex items-center gap-4 cursor-pointer group">
                 <div className="relative flex items-center justify-center w-6 h-6">
                     <input 
                       type="checkbox" 
-                      checked={filters.levels.includes(level)}
-                      onChange={() => toggleLevel(level)}
+                      checked={filters.levels.includes(opt.value)}
+                      onChange={() => toggleLevel(opt.value)}
                       className="peer w-6 h-6 rounded-none border-2 border-slate-900 text-slate-900 focus:ring-slate-900 appearance-none bg-white checked:bg-slate-900 checked:border-slate-900 transition-colors cursor-pointer" 
                     />
                     <svg className="absolute w-4 h-4 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
                         <path strokeLinecap="square" strokeLinejoin="miter" d="M5 13l4 4L19 7" />
                     </svg>
                 </div>
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-600 group-hover:text-slate-900 transition-colors">{level}</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-600 group-hover:text-slate-900 transition-colors">{opt.label}</span>
               </label>
             ))}
           </div>
         </div>
 
         <div>
-          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block border-b-2 border-slate-900 pb-2">Instruction</label>
+          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block border-b-2 border-slate-900 pb-2">{t('instruction')}</label>
           <div className="space-y-4 mt-4">
-            {['English', 'Turkish'].map(lang => (
-              <label key={lang} className="flex items-center gap-4 cursor-pointer group">
+            {langOptions.map(opt => (
+              <label key={opt.value} className="flex items-center gap-4 cursor-pointer group">
                  <div className="relative flex items-center justify-center w-6 h-6">
                     <input 
                       type="checkbox" 
-                      checked={filters.languages.includes(lang)}
-                      onChange={() => toggleLanguage(lang)}
+                      checked={filters.languages.includes(opt.value)}
+                      onChange={() => toggleLanguage(opt.value)}
                       className="peer w-6 h-6 rounded-none border-2 border-slate-900 text-slate-900 focus:ring-slate-900 appearance-none bg-white checked:bg-slate-900 checked:border-slate-900 transition-colors cursor-pointer" 
                     />
                     <svg className="absolute w-4 h-4 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
                         <path strokeLinecap="square" strokeLinejoin="miter" d="M5 13l4 4L19 7" />
                     </svg>
                 </div>
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-600 group-hover:text-slate-900 transition-colors">{lang}</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-slate-600 group-hover:text-slate-900 transition-colors">{opt.label}</span>
               </label>
             ))}
           </div>
         </div>
         
         <div>
-          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block border-b-2 border-slate-900 pb-2">Max Price ($)</label>
+          <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block border-b-2 border-slate-900 pb-2">{t('maxPrice')}</label>
           <div className="relative mt-4">
             <Input 
               type="number"
-              placeholder="E.G. 5000" 
+              placeholder={t('pricePlaceholder')} 
               value={filters.maxPrice}
               onChange={(e) => setFilters(prev => ({ ...prev, maxPrice: e.target.value }))}
               className="bg-white border-2 border-slate-900 focus-visible:ring-0 focus-visible:border-slate-900 focus-visible:bg-slate-50 h-14 rounded-none text-sm font-bold tracking-wide uppercase placeholder:text-slate-400"

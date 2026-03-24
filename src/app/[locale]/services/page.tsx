@@ -42,14 +42,14 @@ export default function ServicesPage() {
     },
     {
       icon: <Building className="h-8 w-8 text-rose-500" />,
-      title: "University Tours",
-      description: "Guided tours across campuses before making your final decision.",
+      title: t('tours'),
+      description: t('toursDesc'),
       color: "bg-rose-50"
     },
     {
       icon: <Library className="h-8 w-8 text-indigo-500" />,
-      title: "Equivalency Process",
-      description: "Assistance with getting your diplomas recognized by the Ministry of Education in Turkey.",
+      title: t('equivalency'),
+      description: t('equivalencyDesc'),
       color: "bg-indigo-50"
     }
   ];
@@ -89,10 +89,10 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <div className="bg-slate-50 py-24 border-t border-slate-200">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-           <h2 className="text-3xl font-bold text-slate-900 mb-6">Ready to see your options?</h2>
-           <p className="text-xl text-slate-600 mb-10">Start searching through thousands of programs across the best universities in Turkey.</p>
+           <h2 className="text-3xl font-bold text-slate-900 mb-6">{t('ctaTitle')}</h2>
+           <p className="text-xl text-slate-600 mb-10">{t('ctaDesc')}</p>
            <Link href="/search" className="inline-flex items-center justify-center whitespace-nowrap text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-300 disabled:pointer-events-none disabled:opacity-50 h-14 bg-blue-600 text-white hover:bg-blue-700 shadow-lg rounded-full px-10">
-              Browse Programs
+               {t('ctaButton')}
            </Link>
         </div>
       </div>

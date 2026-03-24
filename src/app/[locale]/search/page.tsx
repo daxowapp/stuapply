@@ -31,7 +31,7 @@ function SearchContent() {
 
   const PAGE_SIZE = 20;
 
-  const SELECTED_COLUMNS = 'id,name,level,language,official_price,discounted_price,currency,universities(name)';
+  const SELECTED_COLUMNS = 'id,name,name_translations,level,language,official_price,discounted_price,currency,universities(name,names_translations)';
 
   const applyFilters = useCallback((query: any) => {
     if (searchTerm) {
@@ -132,7 +132,7 @@ function SearchContent() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-slate-900 mb-6 uppercase">{t('title')}</h1>
             <p className="text-slate-600 text-xs md:text-sm font-bold tracking-[0.2em] max-w-2xl uppercase leading-relaxed border-l-4 border-slate-900 pl-6 py-1">
-              Browse the academic catalog. Examine programs across top institutions to find your structural fit.
+               {t('subtitle')}
             </p>
         </div>
       </header>
@@ -153,29 +153,29 @@ function SearchContent() {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 border-b-2 border-slate-900 pb-4 gap-4">
              <div className="text-slate-900 font-bold tracking-widest uppercase text-xs">
                 {totalCount !== null && (
-                  <span>INDEX: {programs.length} / <strong className="font-black text-slate-900">{totalCount}</strong> {t('resultsFound') || 'RECORDS'}</span>
+                  <span>INDEX: {programs.length} / <strong className="font-black text-slate-900">{totalCount}</strong> {t('resultsFound')}</span>
                 )}
              </div>
              <div className="flex items-center gap-3">
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hidden sm:inline">SORT:</span>
-                <select className="text-xs font-bold uppercase tracking-widest border-2 border-slate-900 bg-white px-4 py-2 text-slate-900 outline-none focus:ring-0 cursor-pointer hover:bg-slate-900 hover:text-white transition-colors">
-                    <option>Recommended</option>
-                    <option>Price: Low to High</option>
-                    <option>Price: High to Low</option>
-                </select>
+                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hidden sm:inline">{t('sortLabel')}</span>
+                 <select className="text-xs font-bold uppercase tracking-widest border-2 border-slate-900 bg-white px-4 py-2 text-slate-900 outline-none focus:ring-0 cursor-pointer hover:bg-slate-900 hover:text-white transition-colors">
+                     <option>{t('sortRecommended')}</option>
+                     <option>{t('sortPriceLow')}</option>
+                     <option>{t('sortPriceHigh')}</option>
+                 </select>
              </div>
           </div>
 
           {loading ? (
              <div className="flex flex-col items-center justify-center py-32 border-2 border-slate-900 border-dashed bg-white">
-                <div className="animate-spin h-10 w-10 border-4 border-slate-200 border-t-slate-900 rounded-none mb-6"></div>
-                <p className="text-slate-900 font-bold tracking-widest uppercase text-xs animate-pulse">Retrieving records...</p>
+                 <div className="animate-spin h-10 w-10 border-4 border-slate-200 border-t-slate-900 rounded-none mb-6"></div>
+                 <p className="text-slate-900 font-bold tracking-widest uppercase text-xs animate-pulse">{t('loading')}</p>
              </div>
           ) : programs.length === 0 ? (
              <div className="text-center py-32 bg-white border-2 border-slate-900 flex flex-col items-center">
-               <SearchIcon className="h-12 w-12 text-slate-300 mb-6" strokeWidth={1} />
-               <h3 className="text-2xl font-black text-slate-900 tracking-tighter mb-2 uppercase">Zero Records</h3>
-               <p className="text-slate-600 max-w-md mx-auto font-bold tracking-[0.2em] uppercase text-[10px] mt-4 leading-relaxed">{t('noResults')}</p>
+                <SearchIcon className="h-12 w-12 text-slate-300 mb-6" strokeWidth={1} />
+                <h3 className="text-2xl font-black text-slate-900 tracking-tighter mb-2 uppercase">{t('zeroRecords')}</h3>
+                <p className="text-slate-600 max-w-md mx-auto font-bold tracking-[0.2em] uppercase text-[10px] mt-4 leading-relaxed">{t('noResults')}</p>
              </div>
           ) : (
             <>
@@ -193,7 +193,7 @@ function SearchContent() {
                     className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-transparent border-2 border-slate-900 text-slate-900 font-bold uppercase tracking-widest text-xs hover:bg-slate-900 hover:text-white transition-all disabled:opacity-50 w-full sm:w-auto"
                   >
                     {loadingMore ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
-                    {loadingMore ? 'RETRIEVING' : 'LOAD ADDITIONAL RECORDS'}
+                    {loadingMore ? t('loadingMore') : t('loadMore')}
                   </button>
                 </div>
               )}
@@ -206,11 +206,12 @@ function SearchContent() {
 }
 
 export default function SearchPage() {
+  const t = useTranslations('Search');
   return (
     <Suspense fallback={
       <div className="min-h-screen bg-[#FAFAFA] flex flex-col items-center justify-center">
         <div className="animate-spin h-12 w-12 border-4 border-slate-200 border-t-slate-900 rounded-none mb-6"></div>
-        <p className="text-slate-900 font-bold tracking-widest uppercase text-xs animate-pulse">Initializing...</p>
+        <p className="text-slate-900 font-bold tracking-widest uppercase text-xs animate-pulse">{t('initializing')}</p>
       </div>
     }>
       <SearchContent />

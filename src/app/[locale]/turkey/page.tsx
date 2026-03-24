@@ -44,7 +44,7 @@ export default function TurkeyPage() {
       name: t('istanbul'),
       image: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&q=80&w=800",
       description: t('istanbulDesc'),
-      tag: "Cultural & Economic Hub",
+      tag: t('istanbulTag'),
       universities: "50+"
     },
     {
@@ -52,7 +52,7 @@ export default function TurkeyPage() {
       name: t('ankara'),
       image: "https://images.unsplash.com/photo-1589030343991-69ea1433b941?auto=format&fit=crop&q=80&w=800",
       description: t('ankaraDesc'),
-      tag: "Capital City",
+      tag: t('ankaraTag'),
       universities: "15+"
     },
     {
@@ -60,7 +60,7 @@ export default function TurkeyPage() {
       name: t('izmir'),
       image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&q=80&w=800",
       description: t('izmirDesc'),
-      tag: "Coastal Beauty",
+      tag: t('izmirTag'),
       universities: "9+"
     },
     {
@@ -68,7 +68,7 @@ export default function TurkeyPage() {
       name: t('eskisehir'),
       image: "https://images.unsplash.com/photo-1549419137-b6f79be96ebd?auto=format&fit=crop&q=80&w=800",
       description: t('eskisehirDesc'),
-      tag: "Student City",
+      tag: t('eskisehirTag'),
       universities: "3"
     },
     {
@@ -76,7 +76,7 @@ export default function TurkeyPage() {
       name: t('antalya'),
       image: "https://images.unsplash.com/photo-1542051812871-75ec466c1417?auto=format&fit=crop&q=80&w=800",
       description: t('antalyaDesc'),
-      tag: "Mediterranean Gem",
+      tag: t('antalyaTag'),
       universities: "4+"
     }
   ];
@@ -93,7 +93,7 @@ export default function TurkeyPage() {
         <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-blue-200 text-sm font-medium mb-8 backdrop-blur-md">
             <Map className="w-4 h-4" />
-            <span>Discover Your Destination</span>
+            <span>{t('discoverDestination')}</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-sm">
             {t('title')}
@@ -134,7 +134,7 @@ export default function TurkeyPage() {
               <p className="text-lg text-slate-600 max-w-2xl">{t('citiesDesc')}</p>
            </div>
            <Link href="/universities" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-slate-900 hover:bg-slate-800 shadow-sm hover:shadow-md transition-all">
-              View All Universities
+              {t('viewAllUniversities')}
               <ChevronRight className="ml-2 h-5 w-5" />
            </Link>
         </div>
@@ -175,7 +175,7 @@ export default function TurkeyPage() {
                   <div className="flex items-center gap-4 pt-6 border-t border-slate-100 mt-auto">
                      <div className="flex items-center text-slate-900 font-medium bg-blue-50/50 px-4 py-2 rounded-xl">
                        <Building2 className="w-5 h-5 text-blue-600 mr-2" />
-                       <span>{city.universities} Universities</span>
+                       <span>{city.universities} {t('universities')}</span>
                      </div>
                   </div>
                 </div>
