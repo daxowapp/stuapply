@@ -31,12 +31,9 @@ function SearchContent() {
 
   const PAGE_SIZE = 20;
 
-  const buildQuery = useCallback((isCount = false) => {
-    let query = supabase.from('programs').select(
-      isCount ? '*:count' : '*, universities!inner(name)', 
-      isCount ? { count: 'exact', head: true } : {}
-    );
+  const SELECTED_COLUMNS = 'id,name,level,language,official_price,discounted_price,currency,universities!inner(name,names_translations)';
 
+  const applyFilters = useCallback((query: any) => {
     if (searchTerm) {
       query = query.or(`name.ilike.%${searchTerm}%,universities.name.ilike.%${searchTerm}%`);
     }
@@ -70,24 +67,27 @@ function SearchContent() {
     setLoading(true);
     setPage(1);
     
-    const countQuery = buildQuery(true);
-    const { count } = await countQuery;
-    setTotalCount(count || 0);
-
-    const query = buildQuery(false)
+    // Single query: fetch data + count in one round-trip
+    let query = supabase
+      .from('programs')
+      .select(SELECTED_COLUMNS, { count: 'exact' })
       .limit(PAGE_SIZE)
       .order('name');
     
-    const { data, error } = await query;
+    query = applyFilters(query);
+    
+    const { data, count, error } = await query;
     if (!error && data) {
       setPrograms(data);
+      setTotalCount(count ?? 0);
       setHasMore(data.length === PAGE_SIZE);
     } else {
       setPrograms([]);
+      setTotalCount(0);
       setHasMore(false);
     }
     setLoading(false);
-  }, [buildQuery]);
+  }, [applyFilters]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -104,9 +104,13 @@ function SearchContent() {
     const from = (nextPage - 1) * PAGE_SIZE;
     const to = from + PAGE_SIZE - 1;
 
-    const query = buildQuery(false)
+    let query = supabase
+      .from('programs')
+      .select(SELECTED_COLUMNS)
       .range(from, to)
       .order('name');
+    
+    query = applyFilters(query);
 
     const { data, error } = await query;
     if (!error && data) {
