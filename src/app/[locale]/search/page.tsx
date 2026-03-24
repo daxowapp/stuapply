@@ -31,7 +31,7 @@ function SearchContent() {
 
   const PAGE_SIZE = 20;
 
-  const SELECTED_COLUMNS = 'id,name,level,language,official_price,discounted_price,currency,universities!inner(name,names_translations)';
+  const SELECTED_COLUMNS = 'id,name,level,language,official_price,discounted_price,currency,universities!inner(name)';
 
   const applyFilters = useCallback((query: any) => {
     if (searchTerm) {
