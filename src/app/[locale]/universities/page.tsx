@@ -3,19 +3,29 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { supabase } from '@/lib/supabase';
-import { Search, MapPin, Building2, ChevronRight, GraduationCap, SlidersHorizontal, X, ChevronDown, Calendar } from 'lucide-react';
+import { Input } from '@/components/ui/input';
 import { Link } from '@/i18n/routing';
+import {
+  Search,
+  MapPin,
+  Building2,
+  ArrowRight,
+  GraduationCap,
+  SlidersHorizontal,
+  ChevronDown,
+  Globe,
+  Loader2,
+} from 'lucide-react';
 
 export default function UniversitiesPage() {
   const t = useTranslations('Universities');
   const locale = useLocale();
-  
+
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCity, setSelectedCity] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState('');
   const [sortBy, setSortBy] = useState('default');
   const [universities, setUniversities] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showFilters, setShowFilters] = useState(false);
 
   // Fetch all universities once on mount
   useEffect(() => {
@@ -33,14 +43,14 @@ export default function UniversitiesPage() {
     fetchUniversities();
   }, []);
 
-  // Extract unique cities for the filter dropdown
-  const cities = useMemo(() => {
-    const citySet = new Set<string>();
+  // Extract unique countries for the filter
+  const countries = useMemo(() => {
+    const countrySet = new Set<string>();
     universities.forEach(uni => {
-      const city = uni.city_names_translations?.[locale] || uni.city;
-      if (city && city !== 'Turkey') citySet.add(city);
+      const country = uni.country;
+      if (country) countrySet.add(country);
     });
-    return Array.from(citySet).sort((a, b) => a.localeCompare(b, locale));
+    return Array.from(countrySet).sort((a, b) => a.localeCompare(b, locale));
   }, [universities, locale]);
 
   // Client-side filter + sort
@@ -53,16 +63,14 @@ export default function UniversitiesPage() {
       result = result.filter(uni => {
         const name = (uni.names_translations?.[locale] || uni.name || '').toLowerCase();
         const city = (uni.city_names_translations?.[locale] || uni.city || '').toLowerCase();
-        return name.includes(q) || city.includes(q);
+        const country = (uni.country || '').toLowerCase();
+        return name.includes(q) || city.includes(q) || country.includes(q);
       });
     }
 
-    // City filter
-    if (selectedCity) {
-      result = result.filter(uni => {
-        const city = uni.city_names_translations?.[locale] || uni.city;
-        return city === selectedCity;
-      });
+    // Country filter
+    if (selectedCountry) {
+      result = result.filter(uni => uni.country === selectedCountry);
     }
 
     // Sort
@@ -79,239 +87,248 @@ export default function UniversitiesPage() {
     }
 
     return result;
-  }, [universities, searchTerm, selectedCity, sortBy, locale]);
+  }, [universities, searchTerm, selectedCountry, sortBy, locale]);
 
-  const hasActiveFilters = searchTerm || selectedCity || sortBy !== 'default';
+  const hasActiveFilters = searchTerm || selectedCountry || sortBy !== 'default';
 
   const clearAllFilters = () => {
     setSearchTerm('');
-    setSelectedCity('');
+    setSelectedCountry('');
     setSortBy('default');
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen pb-24 font-sans selection:bg-blue-500/30">
-      {/* Hero Section */}
-      <div className="relative pt-32 pb-28 overflow-hidden bg-slate-950">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-blue-900/40 via-slate-950 to-slate-950" />
-        <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-blue-600/20 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-emerald-600/10 blur-[100px] pointer-events-none" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-soft-light pointer-events-none" />
-        
-        <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-sm">
-            {t('title')} <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-emerald-400">{t('titleHighlight')}</span>
+    <div className="bg-[#FAFAFA] min-h-screen pb-24 selection:bg-slate-900 selection:text-white">
+      {/* Structural Header Banner */}
+      <header className="border-b-2 border-slate-900 bg-white pt-32 pb-16 mb-12 relative overflow-hidden">
+        {/* Architectural decoration */}
+        <div className="absolute top-0 right-10 w-px h-full bg-slate-100 hidden lg:block"></div>
+        <div className="absolute top-0 right-40 w-px h-full bg-slate-100 hidden lg:block"></div>
+
+        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-slate-900 mb-6 uppercase">
+            {t('title')}
           </h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-12">
+          <p className="text-slate-600 text-xs md:text-sm font-bold tracking-[0.2em] max-w-2xl uppercase leading-relaxed border-l-4 border-slate-900 pl-6 py-1">
             {t('subtitle')}
           </p>
-
-          {/* Search Box */}
-          <div className="max-w-2xl mx-auto relative group">
-             <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none">
-                 <Search className="h-6 w-6 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
-             </div>
-             <input
-                type="text"
-                placeholder={t('searchPlaceholder')}
-                className="w-full h-16 pl-14 pr-6 bg-white/10 hover:bg-white/15 focus:bg-white/20 backdrop-blur-xl border border-white/20 rounded-full text-white placeholder-slate-400 outline-none ring-0 focus:ring-4 focus:ring-blue-500/30 transition-all text-lg shadow-2xl"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-             />
-             {searchTerm && (
-               <button
-                 onClick={() => setSearchTerm('')}
-                 className="absolute inset-y-0 right-5 flex items-center text-slate-400 hover:text-white transition-colors"
-               >
-                 <X className="h-5 w-5" />
-               </button>
-             )}
-          </div>
         </div>
-      </div>
+      </header>
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-20">
-        {/* Filter Bar */}
-        <div className="bg-white/80 backdrop-blur-xl -mt-8 rounded-2xl border border-slate-200/60 shadow-lg px-6 py-4 mb-8">
-          <div className="flex flex-col md:flex-row md:items-center gap-4">
-            {/* Mobile filter toggle */}
-            <button
-              onClick={() => setShowFilters(!showFilters)}
-              className="md:hidden flex items-center gap-2 text-slate-600 font-medium text-sm"
-            >
-              <SlidersHorizontal className="h-4 w-4" />
-              {t('filters')}
-              <ChevronDown className={`h-4 w-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
-            </button>
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row gap-12">
+        {/* Filters Sidebar */}
+        <div className="w-full md:w-80 shrink-0">
+          <div className="bg-[#FAFAFA] p-8 border-2 border-slate-900 sticky top-28 mb-8 md:mb-0">
+            <div className="flex items-center justify-between mb-8 pb-4 border-b-2 border-slate-900">
+              <div className="flex items-center gap-3 text-slate-900">
+                <SlidersHorizontal className="h-5 w-5" strokeWidth={2} />
+                <h2 className="text-xl font-black tracking-tighter uppercase">{t('filters')}</h2>
+              </div>
+            </div>
 
-            <div className={`flex flex-col md:flex-row md:items-center gap-4 flex-1 ${showFilters ? '' : 'hidden md:flex'}`}>
-              {/* City Filter */}
-              <div className="relative flex-shrink-0">
-                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
-                <select
-                  value={selectedCity}
-                  onChange={(e) => setSelectedCity(e.target.value)}
-                  className="appearance-none bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl pl-9 pr-10 py-2.5 text-sm font-medium text-slate-700 outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-300 transition-all cursor-pointer min-w-[180px]"
-                >
-                  <option value="">{t('allCities')}</option>
-                  {cities.map(city => (
-                    <option key={city} value={city}>{city}</option>
+            <div className="space-y-10">
+              {/* Search */}
+              <div>
+                <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block">
+                  {t('query')}
+                </label>
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-900" strokeWidth={1.5} />
+                  <Input
+                    placeholder={t('searchPlaceholder')}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-12 bg-white border-2 border-slate-900 focus-visible:ring-0 focus-visible:border-slate-900 focus-visible:bg-slate-50 h-14 rounded-none text-sm font-bold tracking-wide uppercase placeholder:text-slate-400"
+                  />
+                </div>
+              </div>
+
+              {/* Country Filter */}
+              <div>
+                <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block border-b-2 border-slate-900 pb-2">
+                  {t('country')}
+                </label>
+                <div className="space-y-3 mt-4 max-h-64 overflow-y-auto">
+                  <label className="flex items-center gap-4 cursor-pointer group">
+                    <div className="relative flex items-center justify-center w-6 h-6">
+                      <input
+                        type="radio"
+                        name="country"
+                        checked={selectedCountry === ''}
+                        onChange={() => setSelectedCountry('')}
+                        className="peer w-6 h-6 rounded-none border-2 border-slate-900 text-slate-900 focus:ring-slate-900 appearance-none bg-white checked:bg-slate-900 checked:border-slate-900 transition-colors cursor-pointer"
+                      />
+                      <div className="absolute w-2.5 h-2.5 bg-white pointer-events-none opacity-0 peer-checked:opacity-100"></div>
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-widest text-slate-600 group-hover:text-slate-900 transition-colors">
+                      {t('allCountries')}
+                    </span>
+                  </label>
+                  {countries.map(country => (
+                    <label key={country} className="flex items-center gap-4 cursor-pointer group">
+                      <div className="relative flex items-center justify-center w-6 h-6">
+                        <input
+                          type="radio"
+                          name="country"
+                          checked={selectedCountry === country}
+                          onChange={() => setSelectedCountry(country)}
+                          className="peer w-6 h-6 rounded-none border-2 border-slate-900 text-slate-900 focus:ring-slate-900 appearance-none bg-white checked:bg-slate-900 checked:border-slate-900 transition-colors cursor-pointer"
+                        />
+                        <div className="absolute w-2.5 h-2.5 bg-white pointer-events-none opacity-0 peer-checked:opacity-100"></div>
+                      </div>
+                      <span className="text-xs font-bold uppercase tracking-widest text-slate-600 group-hover:text-slate-900 transition-colors">
+                        {country}
+                      </span>
+                    </label>
                   ))}
-                </select>
-                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
+                </div>
               </div>
 
               {/* Sort */}
-              <div className="relative flex-shrink-0">
-                <SlidersHorizontal className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl pl-9 pr-10 py-2.5 text-sm font-medium text-slate-700 outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-300 transition-all cursor-pointer min-w-[180px]"
-                >
-                  <option value="default">{t('sortDefault')}</option>
-                  <option value="name-asc">{t('sortNameAsc')}</option>
-                  <option value="name-desc">{t('sortNameDesc')}</option>
-                  <option value="programs">{t('sortProgramsDesc')}</option>
-                </select>
-                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
-              </div>
-
-              {/* Spacer */}
-              <div className="flex-1" />
-
-              {/* Results count + Clear */}
-              <div className="flex items-center gap-3">
-                {!loading && (
-                  <span className="text-sm text-slate-500 font-medium whitespace-nowrap">
-                    {t('showingResults', { count: filteredUniversities.length })}
-                  </span>
-                )}
-                {hasActiveFilters && (
-                  <button
-                    onClick={clearAllFilters}
-                    className="flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-800 font-medium transition-colors whitespace-nowrap"
+              <div>
+                <label className="text-[10px] font-black tracking-[0.2em] uppercase text-slate-900 mb-4 block border-b-2 border-slate-900 pb-2">
+                  {t('sortBy')}
+                </label>
+                <div className="relative mt-4">
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="w-full text-xs font-bold uppercase tracking-widest border-2 border-slate-900 bg-white px-4 py-4 text-slate-900 outline-none focus:ring-0 cursor-pointer hover:bg-slate-900 hover:text-white transition-colors appearance-none rounded-none"
                   >
-                    <X className="h-3.5 w-3.5" />
-                    {t('clearFilters')}
-                  </button>
-                )}
+                    <option value="default">{t('sortDefault')}</option>
+                    <option value="name-asc">{t('sortNameAsc')}</option>
+                    <option value="name-desc">{t('sortNameDesc')}</option>
+                    <option value="programs">{t('sortProgramsDesc')}</option>
+                  </select>
+                  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
+                </div>
               </div>
+
+              {/* Clear filters */}
+              {hasActiveFilters && (
+                <button
+                  onClick={clearAllFilters}
+                  className="w-full text-xs font-bold uppercase tracking-widest border-2 border-slate-900 bg-slate-900 text-white px-4 py-4 hover:bg-white hover:text-slate-900 transition-colors"
+                >
+                  {t('clearFilters')}
+                </button>
+              )}
             </div>
           </div>
-
-          {/* Active filter chips */}
-          {hasActiveFilters && (
-            <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-slate-100">
-              {searchTerm && (
-                <span className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1.5 rounded-full border border-blue-100">
-                  <Search className="h-3 w-3" />
-                  &ldquo;{searchTerm}&rdquo;
-                  <button onClick={() => setSearchTerm('')} className="hover:text-blue-900 ml-0.5"><X className="h-3 w-3" /></button>
-                </span>
-              )}
-              {selectedCity && (
-                <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-medium px-3 py-1.5 rounded-full border border-emerald-100">
-                  <MapPin className="h-3 w-3" />
-                  {selectedCity}
-                  <button onClick={() => setSelectedCity('')} className="hover:text-emerald-900 ml-0.5"><X className="h-3 w-3" /></button>
-                </span>
-              )}
-              {sortBy !== 'default' && (
-                <span className="inline-flex items-center gap-1.5 bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1.5 rounded-full border border-indigo-100">
-                  <SlidersHorizontal className="h-3 w-3" />
-                  {sortBy === 'name-asc' ? t('sortNameAsc') : sortBy === 'name-desc' ? t('sortNameDesc') : t('sortProgramsDesc')}
-                  <button onClick={() => setSortBy('default')} className="hover:text-indigo-900 ml-0.5"><X className="h-3 w-3" /></button>
-                </span>
-              )}
-            </div>
-          )}
         </div>
 
         {/* Results */}
-        {loading ? (
-             <div className="flex flex-col items-center justify-center py-32 bg-white/60 backdrop-blur-sm rounded-2xl border border-slate-200/50 shadow-sm">
-                 <div className="animate-spin rounded-full h-12 w-12 border-4 border-slate-200 border-t-blue-600 mb-4 shadow-sm"></div>
-                 <p className="text-slate-500 font-medium animate-pulse">{t('loading')}</p>
-             </div>
-        ) : filteredUniversities.length === 0 ? (
-           <div className="flex justify-center w-full">
-             <div className="text-center py-32 bg-white/60 backdrop-blur-sm rounded-2xl border border-dashed border-slate-300 w-full max-w-lg">
-                 <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
-                   <Building2 className="h-10 w-10 text-slate-400" />
-                 </div>
-                 <h3 className="text-2xl font-bold text-slate-900 mb-3">{t('noResults')}</h3>
-                 <p className="text-slate-500 max-w-sm mx-auto mb-6">{t('noResultsDesc')}</p>
-                 {hasActiveFilters && (
-                   <button
-                     onClick={clearAllFilters}
-                     className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors"
-                   >
-                     <X className="h-4 w-4" />
-                     {t('clearFilters')}
-                   </button>
-                 )}
-             </div>
-           </div>
-        ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-             {filteredUniversities.map((uni, idx) => (
-                <Link 
-                  key={uni.id} 
-                  href={`/universities/${uni.id}`}
-                  className="group bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full overflow-hidden"
+        <div className="flex-1">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 border-b-2 border-slate-900 pb-4 gap-4">
+            <div className="text-slate-900 font-bold tracking-widest uppercase text-xs">
+              {!loading && (
+                <span>INDEX: {filteredUniversities.length} / <strong className="font-black text-slate-900">{universities.length}</strong> {t('resultsFound')}</span>
+              )}
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 hidden sm:inline">{t('sortLabel')}</span>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="text-xs font-bold uppercase tracking-widest border-2 border-slate-900 bg-white px-4 py-2 text-slate-900 outline-none focus:ring-0 cursor-pointer hover:bg-slate-900 hover:text-white transition-colors"
+              >
+                <option value="default">{t('sortDefault')}</option>
+                <option value="name-asc">{t('sortNameAsc')}</option>
+                <option value="name-desc">{t('sortNameDesc')}</option>
+                <option value="programs">{t('sortProgramsDesc')}</option>
+              </select>
+            </div>
+          </div>
+
+          {loading ? (
+            <div className="flex flex-col items-center justify-center py-32 border-2 border-slate-900 border-dashed bg-white">
+              <div className="animate-spin h-10 w-10 border-4 border-slate-200 border-t-slate-900 rounded-none mb-6"></div>
+              <p className="text-slate-900 font-bold tracking-widest uppercase text-xs animate-pulse">{t('loading')}</p>
+            </div>
+          ) : filteredUniversities.length === 0 ? (
+            <div className="text-center py-32 bg-white border-2 border-slate-900 flex flex-col items-center">
+              <Building2 className="h-12 w-12 text-slate-300 mb-6" strokeWidth={1} />
+              <h3 className="text-2xl font-black text-slate-900 tracking-tighter mb-2 uppercase">{t('noResults')}</h3>
+              <p className="text-slate-600 max-w-md mx-auto font-bold tracking-[0.2em] uppercase text-[10px] mt-4 leading-relaxed">{t('noResultsDesc')}</p>
+              {hasActiveFilters && (
+                <button
+                  onClick={clearAllFilters}
+                  className="mt-8 text-xs font-bold uppercase tracking-widest border-2 border-slate-900 bg-slate-900 text-white px-8 py-3 hover:bg-white hover:text-slate-900 transition-colors"
                 >
-                  {/* Card Header with gradient accent */}
-                  <div className="relative h-2 bg-linear-to-r from-blue-500 via-indigo-500 to-emerald-500 opacity-60 group-hover:opacity-100 transition-opacity" />
-                  
-                  <div className="p-6 flex-1 flex flex-col">
-                    {/* Logo + Name */}
-                    <div className="flex items-start gap-4 mb-5">
-                      <div className="w-14 h-14 bg-slate-50 overflow-hidden rounded-xl flex items-center justify-center border border-slate-100 shrink-0 group-hover:scale-105 group-hover:shadow-md transition-all duration-300">
-                        {uni.logo_url ? (
-                          <img src={uni.logo_url} alt={uni.name} className="w-full h-full object-contain p-2" />
-                        ) : (
-                          <Building2 className="h-7 w-7 text-slate-300" />
-                        )}
+                  {t('clearFilters')}
+                </button>
+              )}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-6">
+              {filteredUniversities.map(uni => (
+                <Link
+                  key={uni.id}
+                  href={`/universities/${uni.id}`}
+                  className="group flex flex-col sm:flex-row border-2 border-slate-900 bg-white transition-all duration-300 hover:bg-slate-900 overflow-hidden relative"
+                >
+                  {/* Structural Image Area */}
+                  <div className="sm:w-1/4 border-b-2 sm:border-b-0 sm:border-r-2 border-slate-900 flex items-center justify-center p-8 bg-slate-50 group-hover:bg-slate-800 transition-colors duration-300">
+                    {uni.logo_url ? (
+                      <img src={uni.logo_url} alt={uni.name} className="h-16 w-16 object-contain group-hover:brightness-200 transition-all duration-300" />
+                    ) : (
+                      <Building2 className="h-16 w-16 text-slate-300 group-hover:text-slate-100 transition-colors duration-300" strokeWidth={1} />
+                    )}
+                  </div>
+
+                  <div className="p-6 sm:p-8 flex-1 flex flex-col h-full group-hover:text-white transition-colors duration-300">
+                    {/* Name + Country badge */}
+                    <div className="flex justify-between items-start mb-6 gap-4">
+                      <div>
+                        <h3 className="text-2xl lg:text-3xl font-black text-slate-900 tracking-tighter leading-none mb-3 group-hover:text-white transition-colors">
+                          {uni.names_translations?.[locale] || uni.name}
+                        </h3>
+                        <div className="flex items-center text-slate-600 text-sm font-bold group-hover:text-slate-300 transition-colors tracking-widest uppercase">
+                          <MapPin className="h-4 w-4 mr-2" strokeWidth={1.5} />
+                          <span className="truncate">{uni.city_names_translations?.[locale] || uni.city || '—'}</span>
+                        </div>
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-bold text-slate-900 line-clamp-2 leading-snug group-hover:text-blue-600 transition-colors">{uni.names_translations?.[locale] || uni.name}</h3>
-                      </div>
-                    </div>
-                    
-                    {/* Info Badges */}
-                    <div className="flex flex-wrap gap-2 mb-5">
-                      <span className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg text-xs font-semibold border border-blue-100/50">
-                         <MapPin className="h-3.5 w-3.5" />
-                         {uni.city_names_translations?.[locale] || uni.city || 'Turkey'}
-                      </span>
-                      <span className="inline-flex items-center gap-1.5 bg-indigo-50 text-indigo-700 px-3 py-1.5 rounded-lg text-xs font-semibold border border-indigo-100/50">
-                         <GraduationCap className="h-3.5 w-3.5" />
-                         {uni.programs?.[0]?.count || 0} {t('programs')}
-                      </span>
-                      {uni.founded_year && (
-                        <span className="inline-flex items-center gap-1.5 bg-slate-50 text-slate-600 px-3 py-1.5 rounded-lg text-xs font-semibold border border-slate-100/50">
-                           <Calendar className="h-3.5 w-3.5" />
-                           {t('founded')} {uni.founded_year}
-                        </span>
+                      {uni.country && (
+                        <div className="hidden md:flex flex-col items-end shrink-0">
+                          <span className="text-[10px] font-black uppercase tracking-[0.2em] border-2 border-slate-900 text-slate-900 px-3 py-1.5 group-hover:border-white group-hover:text-white transition-colors bg-white group-hover:bg-transparent">
+                            {uni.country}
+                          </span>
+                        </div>
                       )}
                     </div>
 
-                    {/* Spacer */}
-                    <div className="flex-1" />
-                    
+                    {/* Info row */}
+                    <div className="flex flex-wrap gap-4 mt-auto mb-8 border-y-2 border-slate-900 py-3 group-hover:border-slate-700 transition-colors">
+                      <div className="flex items-center text-xs font-bold uppercase tracking-widest text-slate-900 group-hover:text-white mr-4">
+                        <GraduationCap className="h-4 w-4 mr-2" strokeWidth={1.5} />
+                        {uni.programs?.[0]?.count || 0} {t('programs')}
+                      </div>
+                      {uni.country && (
+                        <div className="flex items-center text-xs font-bold uppercase tracking-widest text-slate-900 group-hover:text-white mr-4 md:hidden">
+                          <Globe className="h-4 w-4 mr-2" strokeWidth={1.5} />
+                          {uni.country}
+                        </div>
+                      )}
+                      {uni.founded_year && (
+                        <div className="flex items-center text-xs font-bold uppercase tracking-widest text-slate-900 group-hover:text-white">
+                          {t('founded')}: {uni.founded_year}
+                        </div>
+                      )}
+                    </div>
+
                     {/* CTA */}
-                    <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                       <span className="text-sm font-semibold text-blue-600 group-hover:text-blue-700 transition-colors">{t('viewDetails')}</span>
-                       <div className="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md">
-                          <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                       </div>
+                    <div className="flex items-end justify-end">
+                      <span className="group/btn inline-flex items-center justify-center font-bold tracking-[0.2em] uppercase text-xs h-14 border-2 border-slate-900 bg-[#FAFAFA] text-slate-900 hover:bg-slate-900 hover:text-white group-hover:border-white group-hover:bg-white group-hover:text-slate-900 transition-all px-10">
+                        {t('viewDetails')}
+                        <ArrowRight className="ml-3 h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={3} />
+                      </span>
                     </div>
                   </div>
                 </Link>
-             ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
